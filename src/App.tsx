@@ -1,10 +1,10 @@
-import "./App.css";
-import { Title } from "./StyledComponents";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <Title>Hello World</Title>
+      <Header />
+      <h1>Hello World</h1>
     </>
   );
 }
