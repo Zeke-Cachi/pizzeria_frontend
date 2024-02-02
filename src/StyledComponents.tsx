@@ -38,9 +38,9 @@ export const Button = styled.button`
   color: white;
   font-weight: 700;
   border-radius: 15px;
-  outline: none;
   border: none;
   transition: background 200ms ease-in-out;
+  cursor: pointer;
 
   &:hover {
     color: #ffa07a;

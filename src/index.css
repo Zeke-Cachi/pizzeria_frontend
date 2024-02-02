@@ -6,3 +6,30 @@
   box-sizing: border-box;
   list-style-type: none;
 }
+
+/*----------------- CAROUSEL ARROWS ----------------*/
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  opacity: 30%;
+  top: calc(50% - 1.5rem);
+  cursor: pointer;
+  z-index: 50;
+  transition: opacity 100ms ease-in-out;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  opacity: 100%;
+}
+
+.left-arrow {
+  right: 3rem;
+}
+
+.right-arrow {
+  left: 3rem;
+}
