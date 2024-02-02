@@ -33,7 +33,6 @@ const Header = () => {
           <Button>Order online</Button>
         </HeaderWrapper>
       </HeaderStyle>
-      ;
     </>
   );
 };

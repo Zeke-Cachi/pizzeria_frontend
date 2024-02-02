@@ -14,11 +14,12 @@
   position: absolute;
   width: 3rem;
   height: 3rem;
-  opacity: 30%;
+  opacity: 50%;
   top: calc(50% - 1.5rem);
   cursor: pointer;
   z-index: 50;
   transition: opacity 100ms ease-in-out;
+  color: white;
 }
 
 .left-arrow:hover,

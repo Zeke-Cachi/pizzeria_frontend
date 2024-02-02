@@ -1,6 +1,6 @@
-import image1 from "../../../img/arugula-prosciutto-3862d4e24-4493-4269-a58f-460abc571f7d.jpg";
-import image2 from "../assets/react.svg";
-import image3 from "../../../img/4-cheese-19e04e25a-8c95-4d95-8794-a2b424c8ee42.jpg";
+import image1 from "../assets/carousel-1.png";
+import image2 from "../assets/carousel-2.png";
+import image3 from "../assets/carousel-3.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -34,25 +34,13 @@ const CarouselComponent = () => {
     <div>
       <Slider {...settings}>
         <div>
-          <img
-            style={{ width: "30rem", margin: "0 auto" }}
-            src={image1}
-            alt=""
-          />
+          <img src={image1} alt="" />
         </div>
         <div>
-          <img
-            style={{ width: "30rem", margin: "0 auto" }}
-            src={image2}
-            alt=""
-          />
+          <img src={image2} alt="" />
         </div>
         <div>
-          <img
-            style={{ width: "30rem", margin: "0 auto" }}
-            src={image3}
-            alt=""
-          />
+          <img src={image3} alt="" />
         </div>
       </Slider>
     </div>
