@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledMainOptionsCardTopProps } from "./Interfaces";
 
 export const HeaderStyle = styled.header`
   height: 6rem;
@@ -47,4 +48,58 @@ export const Button = styled.button`
     background: black;
     border: 2px solid #ffa07a;
   }
+`;
+
+export const StyledMainOptions = styled.section`
+  height: 630px;
+  margin-top: 2rem;
+  padding-top: 2rem;
+`;
+
+export const StyledMainOptionsCard = styled.div`
+  height: 20rem;
+  width: 20rem;
+  border-radius: 20px;
+  box-shadow: 0 0 15px 10px #e0e0e0;
+  overflow: hidden;
+  cursor: pointer;
+`;
+
+export const MainOptionsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 7rem;
+  width: 100%;
+`;
+
+export const StyledMainOptionsCardTop = styled.div<StyledMainOptionsCardTopProps>`
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+  background-image: ${(props) => `url(${props.image})`};
+`;
+
+export const StyledMainOptionsCardBottom = styled.div`
+  height: 50%;
+  width: 100%;
+  background: #252523;
+  font-weight: 700;
+  color: white;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: Ubuntu;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+`;
+
+export const MainOptionsBanner = styled.img`
+  width: 713px;
+  height: 143px;
+  margin-top: 3rem;
+  border-radius: 15px;
+  cursor: pointer;
 `;

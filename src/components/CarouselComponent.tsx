@@ -6,16 +6,15 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../index.css";
+import { IOnClick } from "../Interfaces";
 
 const CarouselComponent = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function SampleNextArrow(props: any) {
+  function SampleNextArrow(props: IOnClick) {
     const { onClick } = props;
     return <FaAngleRight onClick={onClick} className="left-arrow" />;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function SamplePrevArrow(props: any) {
+  function SamplePrevArrow(props: IOnClick) {
     const { onClick } = props;
     return <FaAngleLeft onClick={onClick} className="right-arrow" />;
   }

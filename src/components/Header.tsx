@@ -7,6 +7,7 @@ import {
 } from "../StyledComponents";
 import { Link } from "react-router-dom";
 import logoImage from "../assets/giovannis-pizzeria-high-resolution-logo-transparent.png";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -30,7 +31,9 @@ const Header = () => {
               </Link>
             </ul>
           </nav>
-          <Button>Order online</Button>
+          <Button>
+            <FaShoppingCart /> Order online
+          </Button>
         </HeaderWrapper>
       </HeaderStyle>
     </>
