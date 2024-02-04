@@ -91,7 +91,6 @@ export const StyledMainOptionsCardBottom = styled.div`
   display: grid;
   place-items: center;
   text-align: center;
-  font-family: Ubuntu;
   font-size: 2rem;
   padding: 0 0.5rem;
 `;
@@ -102,4 +101,17 @@ export const MainOptionsBanner = styled.img`
   margin-top: 3rem;
   border-radius: 15px;
   cursor: pointer;
+`;
+
+export const StyledPizzaOptions = styled.section`
+  background-color: #e6e6e6;
+  height: 50rem;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+`;
+
+export const SecondaryTitle = styled.h2`
+  color: gray;
+  font-size: 3rem;
+  font-weight: 700;
 `;

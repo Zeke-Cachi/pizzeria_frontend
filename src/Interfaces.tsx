@@ -10,3 +10,12 @@ export interface IMainOptionsProps {
 export interface StyledMainOptionsCardTopProps {
   image: string;
 }
+
+export interface IPizzaContext {}
+
+export interface IFetchPizzas {
+  pizzaId: number;
+  pizzaName: string;
+  pizzaDescription: string;
+  pizzaBakeType: string;
+}
