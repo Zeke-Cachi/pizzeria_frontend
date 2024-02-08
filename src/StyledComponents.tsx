@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { StyledMainOptionsCardTopProps } from "./Interfaces";
+import { StyledMainOptionsCardTopProps, ISecondaryTitle } from "./Interfaces";
+
+//-------------------------------- HEADER -----------------------------------------------------------------------------------------------------
 
 export const HeaderStyle = styled.header`
   height: 6rem;
@@ -32,6 +34,7 @@ export const NavLinks = styled.li`
   cursor: pointer;
 `;
 
+//-------------------------------- GENERIC BUTTON -------------------------------------------------------------------------------------------
 export const Button = styled.button`
   width: 8rem;
   height: 3rem;
@@ -50,8 +53,9 @@ export const Button = styled.button`
   }
 `;
 
+//-------------------------------- MAIN OPTIONS FROM THE MAIN PAGE -----------------------------------------------------------------------------
 export const StyledMainOptions = styled.section`
-  height: 630px;
+  height: 700px;
   margin-top: 2rem;
   padding-top: 2rem;
 `;
@@ -63,6 +67,11 @@ export const StyledMainOptionsCard = styled.div`
   box-shadow: 0 0 15px 10px #e0e0e0;
   overflow: hidden;
   cursor: pointer;
+  &:hover {
+    > :first-child {
+      background-size: 110%;
+    }
+  }
 `;
 
 export const MainOptionsContainer = styled.div`
@@ -74,12 +83,13 @@ export const MainOptionsContainer = styled.div`
 `;
 
 export const StyledMainOptionsCardTop = styled.div<StyledMainOptionsCardTopProps>`
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   height: 50%;
   width: 100%;
   background-image: ${(props) => `url(${props.image})`};
+  transition: background-size 250ms ease-in-out;
 `;
 
 export const StyledMainOptionsCardBottom = styled.div`
@@ -103,6 +113,15 @@ export const MainOptionsBanner = styled.img`
   cursor: pointer;
 `;
 
+//-------------------------------- GENERIC SECONDARY TITLE ------------------------------------------------------------------------------------
+export const SecondaryTitle = styled.h2<ISecondaryTitle>`
+  color: gray;
+  font-size: ${({ size }) => size};
+  margin-top: ${({ marginTop }) => marginTop};
+  font-weight: 700;
+`;
+
+//-------------------------------- PIZZA OPTIONS FROM MAIN PAGE ------------------------------------------------------------------------------
 export const StyledPizzaOptions = styled.section`
   background-color: #e6e6e6;
   height: 50rem;
@@ -110,8 +129,44 @@ export const StyledPizzaOptions = styled.section`
   text-align: center;
 `;
 
-export const SecondaryTitle = styled.h2`
-  color: gray;
-  font-size: 3rem;
+export const MainPizzaOptionsCardContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 4rem;
+  padding: 0 1rem;
+`;
+
+export const MainPizzaPresentationCard = styled.div`
+  width: 25rem;
+  height: 20rem;
+  background: #e6e6e6;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+`;
+
+export const MainPizzaPresentationCardImg = styled.img`
+  width: 24rem;
+  transform: translateX(-0.7rem) rotate(20deg);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+`;
+
+export const MainPizzaPresentationCardLower = styled.div`
+  padding-top: 2rem;
+  height: 50%;
+  width: 100%;
+  background: black;
+  color: white;
   font-weight: 700;
+  font-size: 2.2rem;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  box-shadow: 0 1px 5px 1px gray;
 `;
