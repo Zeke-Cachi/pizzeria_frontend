@@ -117,14 +117,14 @@ export const MainOptionsBanner = styled.img`
 export const SecondaryTitle = styled.h2<ISecondaryTitle>`
   color: gray;
   font-size: ${({ size }) => size};
-  margin-top: ${({ marginTop }) => marginTop};
+  margin-top: ${({ top }) => top};
   font-weight: 700;
 `;
 
 //-------------------------------- PIZZA OPTIONS FROM MAIN PAGE ------------------------------------------------------------------------------
 export const StyledPizzaOptions = styled.section`
   background-color: #e6e6e6;
-  height: 50rem;
+  min-height: 50rem;
   padding: 2rem 1rem 1rem 1rem;
   text-align: center;
 `;
@@ -169,4 +169,19 @@ export const MainPizzaPresentationCardLower = styled.div`
   place-items: center;
   border-radius: 15px;
   box-shadow: 0 1px 5px 1px gray;
+`;
+
+export const PizzaCardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 10rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+`;
+
+export const PizzaCard = styled.div`
+  height: 18rem;
+  width: 18rem;
+  background: blue;
 `;

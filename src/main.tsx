@@ -6,7 +6,8 @@ import ContactPage from "./pages/ContactPage.tsx";
 import PizzasPage from "./pages/PizzasPage.tsx";
 import StoresPage from "./pages/StoresPage.tsx";
 import "./index.css";
-import PizzaProvider from "./contexts/PizzaContext.tsx";
+import { Provider } from "react-redux";
+import { store } from "./state/store.ts";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +30,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <PizzaProvider>
+    <Provider store={store}>
       <RouterProvider router={router} />
-    </PizzaProvider>
+    </Provider>
   </React.StrictMode>
 );

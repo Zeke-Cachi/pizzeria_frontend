@@ -13,7 +13,7 @@ export interface StyledMainOptionsCardTopProps {
 
 export interface ISecondaryTitle {
   size: string;
-  marginTop: string;
+  top: string;
 }
 
 export interface IPizzaContext {}
@@ -23,4 +23,7 @@ export interface IFetchPizzas {
   pizzaName: string;
   pizzaDescription: string;
   pizzaBakeType: string;
+  pizzaImg1?: string;
+  pizzaImg2?: string;
+  pizzaImg3?: string;
 }
