@@ -11,6 +11,15 @@ const initialState: IFetchPizzas[] = [
   },
 ];
 
+export const fetchPizzas = createAsyncThunk("pizzaFetcher/fetch", async () => {
+  try {
+    const response = await axios.get("http://localhost:8080/api/v1/pizzas");
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 const fetchPizzaSlice = createSlice({
   name: "pizzaFetcher",
   initialState,
@@ -20,15 +29,6 @@ const fetchPizzaSlice = createSlice({
       return action.payload;
     });
   },
-});
-
-export const fetchPizzas = createAsyncThunk("pizzaFetcher/fetch", async () => {
-  try {
-    const response = await axios.get("http://localhost:8080/api/v1/pizzas");
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
 });
 
 export default fetchPizzaSlice.reducer;
