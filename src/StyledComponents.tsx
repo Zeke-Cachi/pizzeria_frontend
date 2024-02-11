@@ -222,3 +222,47 @@ export const PizzaCardImg = styled.div<StyledMainOptionsCardTopProps>`
   background-image: ${({ image }) => `url(${image})`};
   background-size: cover;
 `;
+
+//-------------------------------- CONTACT FORM SECTION ---------------------------------------------------------------------------------------
+export const ContactFormSectionContainer = styled.section<StyledMainOptionsCardTopProps>`
+  background-image: ${({ image }) => `url(${image})`};
+  background-size: cover;
+  width: 100%;
+  height: 70vh;
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+`;
+
+export const StyledContactForm = styled.form``;
+
+export const ContactFormContainer = styled.div`
+  width: 25rem;
+  height: 100%;
+  margin-top: 2rem;
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  gap: 0.5rem;
+`;
+
+export const FormInput = styled.input`
+  border-radius: 10px;
+  height: 2rem;
+  width: 90%;
+  outline: none;
+  border: none;
+  background-color: white;
+`;
+
+export const FormTextArea = styled.textarea`
+  border-radius: 10px;
+  height: 10rem;
+  width: 90%;
+  outline: none;
+  border: none;
+  background-color: white;
+`;

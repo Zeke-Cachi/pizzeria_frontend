@@ -2,6 +2,7 @@ import CarouselComponent from "./components/CarouselComponent";
 import Header from "./components/Header";
 import MainOptions from "./components/MainOptions";
 import PizzaOptions from "./components/PizzaOptions";
+import ContactFormSection from "./components/ContactFormSection";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <CarouselComponent />
       <MainOptions />
       <PizzaOptions />
+      <ContactFormSection />
     </>
   );
 }
