@@ -19,7 +19,9 @@ const HightlightedPizzas = () => {
         />
         <MainPizzaPresentationCardLower>
           <p>PEPERONNI PIZZA</p>
-          <Button>ORDER NOW</Button>
+          <Button bgColor="#ffa07a" top="0rem">
+            ORDER NOW
+          </Button>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>
 
@@ -30,7 +32,9 @@ const HightlightedPizzas = () => {
         />
         <MainPizzaPresentationCardLower>
           <p>HAWAIIAN PIZZA</p>
-          <Button>ORDER NOW</Button>
+          <Button bgColor="#ffa07a" top="0rem">
+            ORDER NOW
+          </Button>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>
 
@@ -41,7 +45,9 @@ const HightlightedPizzas = () => {
         />
         <MainPizzaPresentationCardLower>
           <p>BUFFALO WING PIZZA</p>
-          <Button>ORDER NOW</Button>
+          <Button bgColor="#ffa07a" top="0rem">
+            ORDER NOW
+          </Button>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>
     </MainPizzaOptionsCardContainer>

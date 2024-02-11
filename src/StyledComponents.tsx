@@ -64,7 +64,7 @@ export const CarouselImg = styled.div<ICarouselImg>`
 export const Button = styled.button<IStyledButton>`
   width: 8rem;
   height: 3rem;
-  background: #ffa07a;
+  background: ${({ bgColor }) => bgColor};
   color: white;
   font-weight: 700;
   border-radius: 15px;
@@ -256,6 +256,9 @@ export const FormInput = styled.input`
   outline: none;
   border: none;
   background-color: white;
+  padding: 0.1rem 0.1rem 0.1rem 0.5rem;
+  font-style: italic;
+  }
 `;
 
 export const FormTextArea = styled.textarea`
@@ -265,4 +268,6 @@ export const FormTextArea = styled.textarea`
   outline: none;
   border: none;
   background-color: white;
+  padding: 0.5rem;
+  font-style: italic;
 `;

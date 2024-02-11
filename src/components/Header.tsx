@@ -31,7 +31,7 @@ const Header = () => {
               </Link>
             </ul>
           </nav>
-          <Button>
+          <Button bgColor="#ffa07a" top="0rem">
             <FaShoppingCart /> Order online
           </Button>
         </HeaderWrapper>

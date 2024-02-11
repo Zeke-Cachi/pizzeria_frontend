@@ -29,7 +29,9 @@ const AllPizzas = () => {
           <SecondaryTitle fontColor="black" size="1.5rem" top="1rem">
             {pizza.pizzaName}
           </SecondaryTitle>
-          <Button top="1rem">ORDER NOW</Button>
+          <Button top="1rem" bgColor="#ffa07a">
+            ORDER NOW
+          </Button>
         </PizzaCard>
       ))}
     </PizzaCardContainer>

@@ -5,6 +5,7 @@ import {
   InputContainer,
   FormInput,
   FormTextArea,
+  Button,
 } from "../StyledComponents";
 
 const ContactForm = () => {
@@ -18,20 +19,27 @@ const ContactForm = () => {
           <label style={{ fontWeight: "700" }} htmlFor="fullName">
             Name and lastname
           </label>
-          <FormInput type="text" name="fullName" />
+          <FormInput
+            placeholder="Enter full name"
+            type="text"
+            name="fullName"
+          />
         </InputContainer>
         <InputContainer>
           <label style={{ fontWeight: "700" }} htmlFor="email">
             Email
           </label>
-          <FormInput type="email" name="email" />
+          <FormInput placeholder="Enter email" type="email" name="email" />
         </InputContainer>
         <InputContainer>
           <label style={{ fontWeight: "700" }} htmlFor="message">
             Message
           </label>
-          <FormTextArea name="message" />
+          <FormTextArea placeholder="Enter message" name="message" />
         </InputContainer>
+        <Button top="1rem" bgColor="#222222">
+          Submit
+        </Button>
       </StyledContactForm>
     </ContactFormContainer>
   );

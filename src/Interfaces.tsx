@@ -31,6 +31,7 @@ export interface IFetchPizzas {
 
 export interface IStyledButton {
   top: string;
+  bgColor: string;
 }
 
 export interface ICarouselImg {
