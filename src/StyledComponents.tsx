@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { StyledMainOptionsCardTopProps, ISecondaryTitle } from "./Interfaces";
+import {
+  StyledMainOptionsCardTopProps,
+  ISecondaryTitle,
+  IStyledButton,
+  ICarouselImg,
+} from "./Interfaces";
 
 //-------------------------------- HEADER -----------------------------------------------------------------------------------------------------
 
@@ -34,8 +39,29 @@ export const NavLinks = styled.li`
   cursor: pointer;
 `;
 
+//-------------------------------- CAROUSEL/BANNER -------------------------------------------------------------------------------------------
+export const CarouselImg = styled.div<ICarouselImg>`
+  position: relative;
+  width: 100%;
+  padding-top: calc(500 / 1920 * 100%); /* Aspect ratio: 1920x500 */
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: ${({ carouselImg }) => `url(${carouselImg})`};
+    background-size: cover;
+    background-position: center;
+  }
+`;
+
 //-------------------------------- GENERIC BUTTON -------------------------------------------------------------------------------------------
-export const Button = styled.button`
+export const Button = styled.button<IStyledButton>`
   width: 8rem;
   height: 3rem;
   background: #ffa07a;
@@ -45,6 +71,7 @@ export const Button = styled.button`
   border: none;
   transition: background 200ms ease-in-out;
   cursor: pointer;
+  margin-top: ${({ top }) => top};
 
   &:hover {
     color: #ffa07a;
@@ -115,7 +142,7 @@ export const MainOptionsBanner = styled.img`
 
 //-------------------------------- GENERIC SECONDARY TITLE ------------------------------------------------------------------------------------
 export const SecondaryTitle = styled.h2<ISecondaryTitle>`
-  color: gray;
+  color: ${({ fontColor }) => fontColor};
   font-size: ${({ size }) => size};
   margin-top: ${({ top }) => top};
   font-weight: 700;
@@ -174,7 +201,7 @@ export const MainPizzaPresentationCardLower = styled.div`
 export const PizzaCardContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
   padding: 0 10rem;
   margin: 2rem 0;
   flex-wrap: wrap;
@@ -183,5 +210,15 @@ export const PizzaCardContainer = styled.div`
 export const PizzaCard = styled.div`
   height: 18rem;
   width: 18rem;
-  background: blue;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #e6e6e6;
+  box-shadow: 0px 0px 15px 15px #cfcfcf;
+`;
+
+export const PizzaCardImg = styled.div<StyledMainOptionsCardTopProps>`
+  height: 50%;
+  width: 100%;
+  background-image: ${({ image }) => `url(${image})`};
+  background-size: cover;
 `;

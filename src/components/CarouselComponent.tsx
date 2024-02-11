@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../index.css";
 import { IOnClick } from "../Interfaces";
+import { CarouselImg } from "../StyledComponents";
 
 const CarouselComponent = () => {
   function SampleNextArrow(props: IOnClick) {
@@ -30,17 +31,11 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "100vw" }}>
       <Slider {...settings}>
-        <div>
-          <img src={image1} alt="" />
-        </div>
-        <div>
-          <img src={image2} alt="" />
-        </div>
-        <div>
-          <img src={image3} alt="" />
-        </div>
+        <CarouselImg carouselImg={image1}></CarouselImg>
+        <CarouselImg carouselImg={image2}></CarouselImg>
+        <CarouselImg carouselImg={image3}></CarouselImg>
       </Slider>
     </div>
   );

@@ -1,6 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../state/store";
-import { PizzaCard, PizzaCardContainer } from "../StyledComponents";
+import {
+  PizzaCard,
+  PizzaCardContainer,
+  PizzaCardImg,
+  SecondaryTitle,
+  Button,
+} from "../StyledComponents";
 import { IFetchPizzas } from "../Interfaces";
 import { useEffect } from "react";
 import { fetchPizzas } from "../state/slices/FetchPizzaSlice";
@@ -18,7 +24,13 @@ const AllPizzas = () => {
   return (
     <PizzaCardContainer>
       {pizzaList.map((pizza: IFetchPizzas) => (
-        <PizzaCard key={pizza.pizzaId}>{pizza.pizzaName}</PizzaCard>
+        <PizzaCard key={pizza.pizzaId}>
+          <PizzaCardImg image={pizza.pizzaImg1!}></PizzaCardImg>
+          <SecondaryTitle fontColor="black" size="1.5rem" top="1rem">
+            {pizza.pizzaName}
+          </SecondaryTitle>
+          <Button top="1rem">ORDER NOW</Button>
+        </PizzaCard>
       ))}
     </PizzaCardContainer>
   );

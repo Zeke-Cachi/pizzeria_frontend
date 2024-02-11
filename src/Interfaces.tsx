@@ -12,6 +12,7 @@ export interface StyledMainOptionsCardTopProps {
 }
 
 export interface ISecondaryTitle {
+  fontColor: string;
   size: string;
   top: string;
 }
@@ -26,4 +27,12 @@ export interface IFetchPizzas {
   pizzaImg1?: string;
   pizzaImg2?: string;
   pizzaImg3?: string;
+}
+
+export interface IStyledButton {
+  top: string;
+}
+
+export interface ICarouselImg {
+  carouselImg: string;
 }
