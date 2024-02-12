@@ -29,6 +29,7 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(validationSchema),
     defaultValues: {
@@ -59,6 +60,7 @@ const ContactForm = () => {
 
     if (response.status === 200) {
       setHasFormSubmitted(true);
+      reset();
     } else {
       throw new Error("There was an error on sending the data");
     }
