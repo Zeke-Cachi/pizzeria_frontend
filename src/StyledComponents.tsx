@@ -282,6 +282,9 @@ export const ErrorMsg = styled.span`
 `;
 
 export const SuccessMsg = styled.span`
-  color: black;
+  color: green;
   font-style: italic;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 1rem;
 `;

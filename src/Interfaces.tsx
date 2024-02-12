@@ -39,7 +39,7 @@ export interface ICarouselImg {
 export interface IAbridgedInput {}
 
 export interface ContactFormData {
-  fullName: string;
+  name: string;
   email: string;
   message: string;
 }

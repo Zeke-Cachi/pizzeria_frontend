@@ -13,7 +13,7 @@ const initialState: IFetchPizzas[] = [
 
 export const fetchPizzas = createAsyncThunk("pizzaFetcher/fetch", async () => {
   try {
-    const response = await axios.get("http://localhost:8080/api/v1/pizzas");
+    const response = await axios.get(import.meta.env.VITE_GET_ALL_PIZZAS);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -25,7 +25,7 @@ const fetchPizzaSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchPizzas.fulfilled, (state, action) => {
+    builder.addCase(fetchPizzas.fulfilled, (_state, action) => {
       return action.payload;
     });
   },
