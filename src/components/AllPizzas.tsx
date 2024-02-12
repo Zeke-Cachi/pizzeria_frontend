@@ -26,10 +26,10 @@ const AllPizzas = () => {
       {pizzaList.map((pizza: IFetchPizzas) => (
         <PizzaCard key={pizza.pizzaId}>
           <PizzaCardImg image={pizza.pizzaImg1!}></PizzaCardImg>
-          <SecondaryTitle fontColor="black" size="1.5rem" top="1rem">
+          <SecondaryTitle fontcolor="black" size="1.5rem" top="1rem">
             {pizza.pizzaName}
           </SecondaryTitle>
-          <Button top="1rem" bgColor="#ffa07a">
+          <Button top="1rem" bgcolor="#ffa07a">
             ORDER NOW
           </Button>
         </PizzaCard>

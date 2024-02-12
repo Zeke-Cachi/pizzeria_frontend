@@ -12,12 +12,10 @@ export interface StyledMainOptionsCardTopProps {
 }
 
 export interface ISecondaryTitle {
-  fontColor: string;
+  fontcolor: string;
   size: string;
   top: string;
 }
-
-export interface IPizzaContext {}
 
 export interface IFetchPizzas {
   pizzaId: number;
@@ -31,9 +29,17 @@ export interface IFetchPizzas {
 
 export interface IStyledButton {
   top: string;
-  bgColor: string;
+  bgcolor: string;
 }
 
 export interface ICarouselImg {
-  carouselImg: string;
+  carouselimg: string;
+}
+
+export interface IAbridgedInput {}
+
+export interface ContactFormData {
+  fullName: string;
+  email: string;
+  message: string;
 }

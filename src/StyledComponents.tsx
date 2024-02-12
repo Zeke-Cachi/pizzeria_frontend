@@ -54,7 +54,7 @@ export const CarouselImg = styled.div<ICarouselImg>`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: ${({ carouselImg }) => `url(${carouselImg})`};
+    background-image: ${({ carouselimg }) => `url(${carouselimg})`};
     background-size: cover;
     background-position: center;
   }
@@ -64,7 +64,7 @@ export const CarouselImg = styled.div<ICarouselImg>`
 export const Button = styled.button<IStyledButton>`
   width: 8rem;
   height: 3rem;
-  background: ${({ bgColor }) => bgColor};
+  background: ${({ bgcolor }) => bgcolor};
   color: white;
   font-weight: 700;
   border-radius: 15px;
@@ -142,7 +142,7 @@ export const MainOptionsBanner = styled.img`
 
 //-------------------------------- GENERIC SECONDARY TITLE ------------------------------------------------------------------------------------
 export const SecondaryTitle = styled.h2<ISecondaryTitle>`
-  color: ${({ fontColor }) => fontColor};
+  color: ${({ fontcolor }) => fontcolor};
   font-size: ${({ size }) => size};
   margin-top: ${({ top }) => top};
   font-weight: 700;
@@ -247,6 +247,7 @@ export const InputContainer = styled.div`
   flex-direction: column;
   margin: 2rem 0;
   gap: 0.5rem;
+  position: relative;
 `;
 
 export const FormInput = styled.input`
@@ -269,5 +270,18 @@ export const FormTextArea = styled.textarea`
   border: none;
   background-color: white;
   padding: 0.5rem;
+  font-style: italic;
+`;
+
+export const ErrorMsg = styled.span`
+  font-weight: 700;
+  color: red;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -1.2rem;
+`;
+
+export const SuccessMsg = styled.span`
+  color: black;
   font-style: italic;
 `;
