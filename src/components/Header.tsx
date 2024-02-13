@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <HeaderStyle>
         <HeaderWrapper>
-          <LogoImage src={logoImage} alt="logo image" />
+          <LogoImage src={logoImage} alt="logo image" logoheight="4rem" />
           <nav>
             <ul style={{ display: "flex", justifyContent: "space-between" }}>
               <Link to="/">

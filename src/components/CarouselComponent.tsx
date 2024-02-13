@@ -32,7 +32,7 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div style={{ width: "100vw" }}>
+    <div>
       <Slider {...settings}>
         <CarouselImg carouselimg={image1}></CarouselImg>
         <CarouselImg carouselimg={image2}></CarouselImg>

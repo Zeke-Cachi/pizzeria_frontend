@@ -4,6 +4,7 @@ import MainOptions from "./components/MainOptions";
 import PizzaOptions from "./components/PizzaOptions";
 import ContactFormSection from "./components/ContactFormSection";
 import Stores from "./components/Stores";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <PizzaOptions />
       <Stores />
       <ContactFormSection />
+      <Footer />
     </>
   );
 }

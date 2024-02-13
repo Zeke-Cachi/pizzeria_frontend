@@ -43,3 +43,7 @@ export interface ContactFormData {
   email: string;
   message: string;
 }
+
+export interface ILogoImg {
+  logoheight: string;
+}

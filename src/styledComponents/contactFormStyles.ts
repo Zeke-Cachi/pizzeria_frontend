@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContactFormContainer = styled.div`
-  width: 25rem;
+  width: 30rem;
   height: 100%;
   margin-top: 2rem;
 `;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import { ILogoImg } from "../Interfaces";
 
 export const HeaderStyle = styled.header`
   height: 6rem;
   background-color: black;
   box-shadow: 0 1px 5px 1px gray;
-  width: 100vw;
   display: grid;
   place-items: center;
 `;
@@ -18,8 +18,8 @@ export const HeaderWrapper = styled.div`
   inline-padding: 3rem;
 `;
 
-export const LogoImage = styled.img`
-  height: 4rem;
+export const LogoImage = styled.img<ILogoImg>`
+  height: ${({ logoheight }) => logoheight};
   place-self: center;
 `;
 
