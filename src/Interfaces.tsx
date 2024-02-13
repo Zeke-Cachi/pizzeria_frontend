@@ -7,7 +7,7 @@ export interface IMainOptionsProps {
   text: string;
 }
 
-export interface StyledMainOptionsCardTopProps {
+export interface Image {
   image: string;
 }
 

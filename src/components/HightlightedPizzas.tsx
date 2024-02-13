@@ -6,8 +6,8 @@ import {
   MainPizzaOptionsCardContainer,
   MainPizzaPresentationCardImg,
   MainPizzaPresentationCardLower,
-  Button,
-} from "../StyledComponents";
+} from "../styledComponents/highlightedPizzasStyles";
+import { Button } from "../styledComponents/utils";
 
 const HightlightedPizzas = () => {
   return (

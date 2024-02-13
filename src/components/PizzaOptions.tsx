@@ -1,10 +1,11 @@
-import { StyledPizzaOptions, SecondaryTitle } from "../StyledComponents";
+import { StyledPizzaOptions } from "../styledComponents/pizzaOptionsStyles";
+import { SecondaryTitle } from "../styledComponents/utils";
 import HightlightedPizzas from "./HightlightedPizzas";
 import AllPizzas from "./AllPizzas";
 
 const PizzaOptions = () => {
   return (
-    <StyledPizzaOptions>
+    <StyledPizzaOptions id="all-pizzas">
       <SecondaryTitle fontcolor="gray" size={"3rem"} top={"0"}>
         Choose your pizza
       </SecondaryTitle>

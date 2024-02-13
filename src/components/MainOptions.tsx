@@ -3,7 +3,7 @@ import {
   StyledMainOptions,
   MainOptionsBanner,
   MainOptionsContainer,
-} from "../StyledComponents";
+} from "../styledComponents/mainOptionsStyles";
 import image1 from "../assets/main-options-card-img-1.avif";
 import image2 from "../assets/main-options-card-img-2.jpg";
 import image3 from "../assets/main-options-card-img-3.jpg";

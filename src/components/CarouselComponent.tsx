@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../index.css";
 import { IOnClick } from "../Interfaces";
-import { CarouselImg } from "../StyledComponents";
+import { CarouselImg } from "../styledComponents/carouselStyles";
 
 const CarouselComponent = () => {
   function SampleNextArrow(props: IOnClick) {

@@ -3,11 +3,12 @@ import {
   HeaderWrapper,
   LogoImage,
   NavLinks,
-  Button,
-} from "../StyledComponents";
+} from "../styledComponents/headerStyles";
+import { Button } from "../styledComponents/utils";
 import { Link } from "react-router-dom";
 import logoImage from "../assets/giovannis-pizzeria-high-resolution-logo-transparent.png";
 import { FaShoppingCart } from "react-icons/fa";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   return (
@@ -20,15 +21,15 @@ const Header = () => {
               <Link to="/">
                 <NavLinks>Home</NavLinks>
               </Link>
-              <Link to="/pizzas">
+              <HashLink smooth to="#all-pizzas">
                 <NavLinks>Pizzas</NavLinks>
-              </Link>
-              <Link to="/stores">
+              </HashLink>
+              <HashLink smooth to="#stores">
                 <NavLinks>Stores</NavLinks>
-              </Link>
-              <Link to="/contact">
+              </HashLink>
+              <HashLink smooth to="#contact">
                 <NavLinks>Contact us</NavLinks>
-              </Link>
+              </HashLink>
             </ul>
           </nav>
           <Button bgcolor="#ffa07a" top="0rem">

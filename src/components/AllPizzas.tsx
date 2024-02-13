@@ -4,9 +4,8 @@ import {
   PizzaCard,
   PizzaCardContainer,
   PizzaCardImg,
-  SecondaryTitle,
-  Button,
-} from "../StyledComponents";
+} from "../styledComponents/allPizzasStyles";
+import { SecondaryTitle, Button } from "../styledComponents/utils";
 import { IFetchPizzas } from "../Interfaces";
 import { useEffect } from "react";
 import { fetchPizzas } from "../state/slices/FetchPizzaSlice";

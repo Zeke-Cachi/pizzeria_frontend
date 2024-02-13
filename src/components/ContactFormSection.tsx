@@ -1,4 +1,4 @@
-import { ContactFormSectionContainer } from "../StyledComponents";
+import { ContactFormSectionContainer } from "../styledComponents/contactFormSectionStyles";
 import image from "../assets/contact-form-bg.png";
 import ContactForm from "./ContactForm";
 

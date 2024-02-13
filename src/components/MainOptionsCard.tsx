@@ -2,7 +2,7 @@ import {
   StyledMainOptionsCard,
   StyledMainOptionsCardTop,
   StyledMainOptionsCardBottom,
-} from "../StyledComponents";
+} from "../styledComponents/mainOptionsCardStyles";
 import { IMainOptionsProps } from "../Interfaces";
 
 const MainOptionsCard: React.FC<IMainOptionsProps> = ({ image, text }) => {

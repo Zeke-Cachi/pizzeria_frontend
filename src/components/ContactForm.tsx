@@ -1,14 +1,13 @@
 import {
-  SecondaryTitle,
   StyledContactForm,
   ContactFormContainer,
   InputContainer,
   FormInput,
   FormTextArea,
-  Button,
   ErrorMsg,
   SuccessMsg,
-} from "../StyledComponents";
+} from "../styledComponents/contactFormStyles";
+import { SecondaryTitle, Button } from "../styledComponents/utils";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -67,7 +66,7 @@ const ContactForm = () => {
   };
 
   return (
-    <ContactFormContainer>
+    <ContactFormContainer id="contact">
       <SecondaryTitle fontcolor="black" size="2.5rem" top="3rem">
         Contact us
       </SecondaryTitle>

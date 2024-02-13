@@ -1,4 +1,4 @@
-import { MainPizzaPresentationCard } from "../StyledComponents";
+import { MainPizzaPresentationCard } from "../styledComponents/mainPizzaPresentationStyles";
 
 const MainPizzaPresentation = () => {
   return <MainPizzaPresentationCard></MainPizzaPresentationCard>;
