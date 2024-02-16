@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/pizza",
+    path: "/pizza/:id/:pizzaName/:pizzaDescription/:pizzaBakeType/:pizzaImg1/:pizzaImg2/:pizzaImg3",
     element: <PizzaDetails />,
   },
 ]);

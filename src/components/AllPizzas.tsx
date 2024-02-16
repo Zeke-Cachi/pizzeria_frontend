@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../state/store";
 import {
   PizzaCard,
   PizzaCardContainer,
@@ -7,19 +5,9 @@ import {
 } from "../styledComponents/allPizzasStyles";
 import { SecondaryTitle, Button } from "../styledComponents/utils";
 import { IFetchPizzas } from "../Interfaces";
-import { useEffect } from "react";
-import { fetchPizzas } from "../state/slices/FetchPizzaSlice";
+import { Link } from "react-router-dom";
 
-const AllPizzas = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const pizzaList: IFetchPizzas[] = useSelector(
-    (state: RootState) => state.pizzaList
-  );
-
-  useEffect(() => {
-    if (pizzaList.length === 1) dispatch(fetchPizzas());
-  }, []);
-
+const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {
   return (
     <PizzaCardContainer>
       {pizzaList.map((pizza: IFetchPizzas) => (
@@ -28,9 +16,19 @@ const AllPizzas = () => {
           <SecondaryTitle fontcolor="black" size="1.5rem" top="1rem">
             {pizza.pizzaName}
           </SecondaryTitle>
-          <Button top="1rem" bgcolor="#ffa07a">
-            ORDER NOW
-          </Button>
+          <Link
+            to={`/pizza/${pizza.pizzaId}/${pizza.pizzaName}/${
+              pizza.pizzaDescription
+            }/${pizza.pizzaBakeType}/${encodeURIComponent(
+              pizza.pizzaImg1!
+            )}/${encodeURIComponent(pizza.pizzaImg2!)}/${encodeURIComponent(
+              pizza.pizzaImg3!
+            )}`}
+          >
+            <Button top="1rem" bgcolor="#ffa07a">
+              ORDER NOW
+            </Button>
+          </Link>
         </PizzaCard>
       ))}
     </PizzaCardContainer>

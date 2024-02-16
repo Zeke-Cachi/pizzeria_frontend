@@ -47,3 +47,9 @@ export interface ContactFormData {
 export interface ILogoImg {
   logoheight: string;
 }
+
+export interface IHighlightedPizzas {
+  pepperoniLink: string;
+  hawaiianLink: string;
+  buffaloLink: string;
+}
