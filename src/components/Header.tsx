@@ -28,21 +28,25 @@ const Header = () => {
               </Link>
               <HashLink
                 smooth
-                to="#all-pizzas"
+                to="/#all-pizzas"
                 style={{ textDecoration: "none" }}
               >
                 <NavLinks>Pizzas</NavLinks>
               </HashLink>
-              <HashLink smooth to="#stores" style={{ textDecoration: "none" }}>
+              <HashLink smooth to="/#stores" style={{ textDecoration: "none" }}>
                 <NavLinks>Stores</NavLinks>
               </HashLink>
-              <HashLink smooth to="#contact" style={{ textDecoration: "none" }}>
+              <HashLink
+                smooth
+                to="/#contact"
+                style={{ textDecoration: "none" }}
+              >
                 <NavLinks>Contact us</NavLinks>
               </HashLink>
             </ul>
           </nav>
           <Button bgcolor="#ffa07a">
-            <FaShoppingCart /> Order online
+            <FaShoppingCart /> Go to cart
           </Button>
         </HeaderWrapper>
       </HeaderStyle>

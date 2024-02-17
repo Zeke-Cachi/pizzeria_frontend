@@ -39,7 +39,7 @@ export const PizzaDetailsPrice = styled.p`
   position: relative;
 
   &:after {
-    content: "plus tax";
+    content: "(plus tax)";
     color: lightgray;
     font-size: 1.5rem;
     position: absolute;
