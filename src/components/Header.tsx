@@ -17,22 +17,31 @@ const Header = () => {
         <HeaderWrapper>
           <LogoImage src={logoImage} alt="logo image" logoheight="4rem" />
           <nav>
-            <ul style={{ display: "flex", justifyContent: "space-between" }}>
-              <Link to="/">
+            <ul
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <NavLinks>Home</NavLinks>
               </Link>
-              <HashLink smooth to="#all-pizzas">
+              <HashLink
+                smooth
+                to="#all-pizzas"
+                style={{ textDecoration: "none" }}
+              >
                 <NavLinks>Pizzas</NavLinks>
               </HashLink>
-              <HashLink smooth to="#stores">
+              <HashLink smooth to="#stores" style={{ textDecoration: "none" }}>
                 <NavLinks>Stores</NavLinks>
               </HashLink>
-              <HashLink smooth to="#contact">
+              <HashLink smooth to="#contact" style={{ textDecoration: "none" }}>
                 <NavLinks>Contact us</NavLinks>
               </HashLink>
             </ul>
           </nav>
-          <Button bgcolor="#ffa07a" top="0rem">
+          <Button bgcolor="#ffa07a">
             <FaShoppingCart /> Order online
           </Button>
         </HeaderWrapper>

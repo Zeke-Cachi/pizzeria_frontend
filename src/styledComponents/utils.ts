@@ -9,16 +9,18 @@ export const SecondaryTitle = styled.h2<ISecondaryTitle>`
 `;
 
 export const Button = styled.button<IStyledButton>`
-  width: 8rem;
-  height: 3rem;
+  width: ${({ buttonwidth }) => (buttonwidth ? buttonwidth : `8rem`)};
+  height: ${({ buttonheight }) => (buttonheight ? buttonheight : `3rem`)};
   background: ${({ bgcolor }) => bgcolor};
+  font-size: ${({ buttonfontsize }) =>
+    buttonfontsize ? buttonfontsize : `auto`};
   color: white;
   font-weight: 700;
   border-radius: 15px;
   border: none;
   transition: background 200ms ease-in-out;
   cursor: pointer;
-  margin-top: ${({ top }) => top};
+  margin: ${({ buttonmargin }) => (buttonmargin ? buttonmargin : "0")};
 
   &:hover {
     color: #ffa07a;

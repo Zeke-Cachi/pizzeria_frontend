@@ -18,37 +18,38 @@ const PizzaOptions = () => {
     if (pizzaList.length === 1) dispatch(fetchPizzas());
   }, []);
 
+  //HAD TO HARDCODE THESE SINCE I ONLY FOUND THE APPROPIATE IMAGES FOR THESE THREE PIZZAS :/
   const pepperoniLink =
     pizzaList.length > 1
       ? `/pizza/${pizzaList[1].pizzaId}/${pizzaList[1].pizzaName}/${
           pizzaList[1].pizzaDescription
-        }/${pizzaList[1].pizzaBakeType}/${encodeURIComponent(
-          pizzaList[1].pizzaImg1!
-        )}/${encodeURIComponent(pizzaList[1].pizzaImg2!)}/${encodeURIComponent(
-          pizzaList[1].pizzaImg3!
-        )}`
+        }/${pizzaList[1].pizzaBakeType}/${
+          pizzaList[1].pizzaPrice
+        }/${encodeURIComponent(pizzaList[1].pizzaImg1!)}/${encodeURIComponent(
+          pizzaList[1].pizzaImg2!
+        )}/${encodeURIComponent(pizzaList[1].pizzaImg3!)}`
       : "/";
 
   const hawaiianLink =
     pizzaList.length > 1
       ? `/pizza/${pizzaList[4].pizzaId}/${pizzaList[4].pizzaName}/${
           pizzaList[4].pizzaDescription
-        }/${pizzaList[4].pizzaBakeType}/${encodeURIComponent(
-          pizzaList[4].pizzaImg1!
-        )}/${encodeURIComponent(pizzaList[4].pizzaImg2!)}/${encodeURIComponent(
-          pizzaList[4].pizzaImg3!
-        )}`
+        }/${pizzaList[4].pizzaBakeType}/${
+          pizzaList[4].pizzaPrice
+        }/${encodeURIComponent(pizzaList[4].pizzaImg1!)}/${encodeURIComponent(
+          pizzaList[4].pizzaImg2!
+        )}/${encodeURIComponent(pizzaList[4].pizzaImg3!)}`
       : "/";
 
   const buffaloLink =
     pizzaList.length > 1
       ? `/pizza/${pizzaList[9].pizzaId}/${pizzaList[9].pizzaName}/${
           pizzaList[9].pizzaDescription
-        }/${pizzaList[9].pizzaBakeType}/${encodeURIComponent(
-          pizzaList[9].pizzaImg1!
-        )}/${encodeURIComponent(pizzaList[9].pizzaImg2!)}/${encodeURIComponent(
-          pizzaList[9].pizzaImg3!
-        )}`
+        }/${pizzaList[9].pizzaBakeType}/${
+          pizzaList[9].pizzaPrice
+        }/${encodeURIComponent(pizzaList[9].pizzaImg1!)}/${encodeURIComponent(
+          pizzaList[9].pizzaImg2!
+        )}/${encodeURIComponent(pizzaList[9].pizzaImg3!)}`
       : "/";
 
   return (

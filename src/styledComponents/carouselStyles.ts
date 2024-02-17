@@ -1,9 +1,14 @@
 import styled from "styled-components";
-import { ICarouselImg } from "../Interfaces";
+import { ICarouselImg, IOptionalCarouselStyling } from "../Interfaces";
+
+export const OptionalCarouselStyling = styled.div<IOptionalCarouselStyling>`
+  width: ${({ carouselwidth }) => (carouselwidth ? carouselwidth : "auto")};
+  height: ${({ carouselheight }) => (carouselheight ? carouselheight : "auto")};
+`;
 
 export const CarouselImg = styled.div<ICarouselImg>`
   position: relative;
-  padding-top: calc(500 / 1920 * 100%);
+  padding-top: ${({ paddingtop }) => (paddingtop ? paddingtop : 0)};
   overflow: hidden;
 
   &::before {

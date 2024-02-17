@@ -16,8 +16,6 @@ const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({
   hawaiianLink,
   buffaloLink,
 }) => {
-  //HAD TO HARDCODE THESE SINCE I ONLY FOUND 3 IMAGES SUITABLE FOR THE HIGHTLIGHTED PIZZAS UI :/
-
   return (
     <MainPizzaOptionsCardContainer>
       <MainPizzaPresentationCard>
@@ -29,9 +27,7 @@ const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({
           <p>PEPERONNI</p>
 
           <Link to={pepperoniLink}>
-            <Button bgcolor="#ffa07a" top="0rem">
-              ORDER NOW
-            </Button>
+            <Button bgcolor="#ffa07a">ORDER NOW</Button>
           </Link>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>
@@ -44,9 +40,7 @@ const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({
         <MainPizzaPresentationCardLower>
           <p>HAWAIIAN</p>
           <Link to={hawaiianLink}>
-            <Button bgcolor="#ffa07a" top="0rem">
-              ORDER NOW
-            </Button>
+            <Button bgcolor="#ffa07a">ORDER NOW</Button>
           </Link>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>
@@ -59,9 +53,7 @@ const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({
         <MainPizzaPresentationCardLower>
           <p>BUFFALO CHICKEN</p>
           <Link to={buffaloLink}>
-            <Button bgcolor="#ffa07a" top="0rem">
-              ORDER NOW
-            </Button>
+            <Button bgcolor="#ffa07a">ORDER NOW</Button>
           </Link>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>

@@ -1,15 +1,22 @@
-import image1 from "../assets/carousel-1.png";
-import image2 from "../assets/carousel-2.png";
-import image3 from "../assets/carousel-3.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../index.css";
-import { IOnClick } from "../Interfaces";
-import { CarouselImg } from "../styledComponents/carouselStyles";
+import { ICarouselComponent, IOnClick } from "../Interfaces";
+import {
+  CarouselImg,
+  OptionalCarouselStyling,
+} from "../styledComponents/carouselStyles";
 
-const CarouselComponent = () => {
+const CarouselComponent: React.FC<ICarouselComponent> = ({
+  img1,
+  img2,
+  img3,
+  carouselHeight,
+  carouselWidth,
+  paddingtop,
+}) => {
   function SampleNextArrow(props: IOnClick) {
     const { onClick } = props;
     return <FaAngleRight onClick={onClick} className="left-arrow" />;
@@ -32,13 +39,16 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div>
+    <OptionalCarouselStyling
+      carouselheight={carouselHeight}
+      carouselwidth={carouselWidth}
+    >
       <Slider {...settings}>
-        <CarouselImg carouselimg={image1}></CarouselImg>
-        <CarouselImg carouselimg={image2}></CarouselImg>
-        <CarouselImg carouselimg={image3}></CarouselImg>
+        <CarouselImg carouselimg={img1} paddingtop={paddingtop}></CarouselImg>
+        <CarouselImg carouselimg={img2} paddingtop={paddingtop}></CarouselImg>
+        <CarouselImg carouselimg={img3} paddingtop={paddingtop}></CarouselImg>
       </Slider>
-    </div>
+    </OptionalCarouselStyling>
   );
 };
 

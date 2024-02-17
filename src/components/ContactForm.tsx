@@ -100,7 +100,7 @@ const ContactForm = () => {
           <FormTextArea {...register("message")} placeholder="Enter message" />
           {errors.message && <ErrorMsg>{errors.message.message}</ErrorMsg>}
         </InputContainer>
-        <Button top="1rem" bgcolor="#222222">
+        <Button buttonmargin="1rem 0 0 0" bgcolor="#222222">
           Submit
         </Button>
       </StyledContactForm>

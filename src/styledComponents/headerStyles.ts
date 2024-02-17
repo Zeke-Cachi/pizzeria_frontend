@@ -29,4 +29,5 @@ export const NavLinks = styled.li`
   font-weight: 700;
   margin: 0 2rem;
   cursor: pointer;
+  text-decoration: none;
 `;

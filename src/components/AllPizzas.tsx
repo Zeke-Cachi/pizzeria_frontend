@@ -19,13 +19,13 @@ const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {
           <Link
             to={`/pizza/${pizza.pizzaId}/${pizza.pizzaName}/${
               pizza.pizzaDescription
-            }/${pizza.pizzaBakeType}/${encodeURIComponent(
+            }/${pizza.pizzaBakeType}/${pizza.pizzaPrice}/${encodeURIComponent(
               pizza.pizzaImg1!
             )}/${encodeURIComponent(pizza.pizzaImg2!)}/${encodeURIComponent(
               pizza.pizzaImg3!
             )}`}
           >
-            <Button top="1rem" bgcolor="#ffa07a">
+            <Button buttonmargin="1rem 0 0 0" bgcolor="#ffa07a">
               ORDER NOW
             </Button>
           </Link>
