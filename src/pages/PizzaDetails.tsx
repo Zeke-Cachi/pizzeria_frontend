@@ -10,9 +10,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CarouselComponent from "../components/CarouselComponent";
 import { Button, SecondaryTitle } from "../styledComponents/utils";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../state/store";
+import { addToCart } from "../state/slices/CartSlice";
+import { useEffect } from "react";
 
 const PizzaDetails = () => {
   const {
+    id,
     pizzaName,
     pizzaDescription,
     pizzaBakeType,
@@ -23,6 +28,17 @@ const PizzaDetails = () => {
   } = useParams();
 
   const bakeType = pizzaBakeType?.replace("_", " ");
+
+  const dispatch = useDispatch<AppDispatch>();
+  const cart = useSelector((state: RootState) => state.pizzaList);
+
+  const dispatchAddToCart = (id: number) => {
+    dispatch(addToCart(id));
+  };
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
   return (
     <>
@@ -55,6 +71,7 @@ const PizzaDetails = () => {
               buttonheight="4rem"
               buttonwidth="11rem"
               buttonfontsize="1.2rem"
+              onClick={() => dispatchAddToCart(Number(id))}
             >
               Add to cart
             </Button>

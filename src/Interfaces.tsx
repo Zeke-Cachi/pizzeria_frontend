@@ -23,9 +23,16 @@ export interface IFetchPizzas {
   pizzaDescription: string;
   pizzaBakeType: string;
   pizzaPrice: number;
+  pizzaQuantity: number;
   pizzaImg1?: string;
   pizzaImg2?: string;
   pizzaImg3?: string;
+}
+
+export interface ICart {
+  cart: IFetchPizzas[];
+  items: IFetchPizzas[];
+  totalAmount: number;
 }
 
 export interface IStyledButton {

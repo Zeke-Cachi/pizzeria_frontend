@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import fetchPizzaSlice from "./slices/FetchPizzaSlice";
+import fetchPizzaSlice from "./slices/CartSlice";
 
 export const store = configureStore({
   reducer: { pizzaList: fetchPizzaSlice },

@@ -8,8 +8,20 @@ import Footer from "./components/Footer";
 import image1 from "./assets/carousel-1.png";
 import image2 from "./assets/carousel-2.png";
 import image3 from "./assets/carousel-3.png";
+import { useEffect } from "react";
+import { fetchPizzas } from "./state/slices/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "./state/store";
+import { ICart } from "./Interfaces";
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+  const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
+
+  useEffect(() => {
+    if (!pizzaList.items.length) dispatch(fetchPizzas());
+  }, []);
+
   return (
     <>
       <Header />
@@ -20,7 +32,7 @@ function App() {
         paddingtop="calc(500 / 1920 * 100%)"
       />
       <MainOptions />
-      <PizzaOptions />
+      <PizzaOptions pizzaList={pizzaList} />
       <Stores />
       <ContactFormSection />
       <Footer />
