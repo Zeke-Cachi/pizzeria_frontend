@@ -12,7 +12,12 @@ import CarouselComponent from "../components/CarouselComponent";
 import { Button, SecondaryTitle } from "../styledComponents/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../state/store";
-import { addToCart, removeOneFromCart } from "../state/slices/CartSlice";
+import {
+  addToCart,
+  removeOneFromCart,
+  removeAllFromCart,
+  removeAllOfOneFromCart,
+} from "../state/slices/CartSlice";
 import { useEffect } from "react";
 
 const PizzaDetails = () => {
@@ -38,6 +43,14 @@ const PizzaDetails = () => {
 
   const dispatchRemoveOneFromCart = (id: number) => {
     dispatch(removeOneFromCart(id));
+  };
+
+  const dispatchRemoveAllFromCart = () => {
+    dispatch(removeAllFromCart());
+  };
+
+  const dispatchRemoveAllOfOneFromCart = (id: number) => {
+    dispatch(removeAllOfOneFromCart(id));
   };
 
   useEffect(() => {
@@ -87,6 +100,24 @@ const PizzaDetails = () => {
                 onClick={() => dispatchRemoveOneFromCart(Number(id))}
               >
                 Remove from cart
+              </Button>
+              <Button
+                bgcolor="#ffa07a"
+                buttonheight="2rem"
+                buttonwidth="5rem"
+                buttonfontsize="1.2rem"
+                onClick={() => dispatchRemoveAllFromCart()}
+              >
+                Remove all
+              </Button>
+              <Button
+                bgcolor="#ffa07a"
+                buttonheight="2rem"
+                buttonwidth="5rem"
+                buttonfontsize="1.2rem"
+                onClick={() => dispatchRemoveAllOfOneFromCart(Number(id))}
+              >
+                Remove all of one item
               </Button>
             </div>
           </PizzaData>
