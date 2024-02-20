@@ -41,6 +41,19 @@ const fetchPizzaSlice = createSlice({
         }
       }
     },
+    removeOneFromCart: (state, action) => {
+      const itemIndex = state.cart.findIndex(
+        (item) => item.pizzaId === action.payload
+      );
+      if (itemIndex !== -1) {
+        const itemToRemove = state.cart[itemIndex];
+        if (itemToRemove.pizzaQuantity > 1) {
+          state.cart[itemIndex].pizzaQuantity -= 1;
+        } else {
+          state.cart.splice(itemIndex, 1);
+        }
+      }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchPizzas.fulfilled, (state, action) => {
@@ -49,5 +62,5 @@ const fetchPizzaSlice = createSlice({
   },
 });
 
-export const { addToCart } = fetchPizzaSlice.actions;
+export const { addToCart, removeOneFromCart } = fetchPizzaSlice.actions;
 export default fetchPizzaSlice.reducer;

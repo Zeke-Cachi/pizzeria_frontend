@@ -12,7 +12,7 @@ import CarouselComponent from "../components/CarouselComponent";
 import { Button, SecondaryTitle } from "../styledComponents/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../state/store";
-import { addToCart } from "../state/slices/CartSlice";
+import { addToCart, removeOneFromCart } from "../state/slices/CartSlice";
 import { useEffect } from "react";
 
 const PizzaDetails = () => {
@@ -34,6 +34,10 @@ const PizzaDetails = () => {
 
   const dispatchAddToCart = (id: number) => {
     dispatch(addToCart(id));
+  };
+
+  const dispatchRemoveOneFromCart = (id: number) => {
+    dispatch(removeOneFromCart(id));
   };
 
   useEffect(() => {
@@ -65,16 +69,26 @@ const PizzaDetails = () => {
               {pizzaDescription}
             </PizzaDetailsDescription>
             <PizzaDetailsPrice>${pizzaPrice}</PizzaDetailsPrice>
-            <Button
-              buttonmargin="2rem auto 0"
-              bgcolor="#ffa07a"
-              buttonheight="4rem"
-              buttonwidth="11rem"
-              buttonfontsize="1.2rem"
-              onClick={() => dispatchAddToCart(Number(id))}
-            >
-              Add to cart
-            </Button>
+            <div style={{ display: "flex" }}>
+              <Button
+                bgcolor="#ffa07a"
+                buttonheight="2rem"
+                buttonwidth="5rem"
+                buttonfontsize="1.2rem"
+                onClick={() => dispatchAddToCart(Number(id))}
+              >
+                Add to cart
+              </Button>
+              <Button
+                bgcolor="#ffa07a"
+                buttonheight="2rem"
+                buttonwidth="5rem"
+                buttonfontsize="1.2rem"
+                onClick={() => dispatchRemoveOneFromCart(Number(id))}
+              >
+                Remove from cart
+              </Button>
+            </div>
           </PizzaData>
         </PizzaDetailsMainCard>
       </PizzaDetailsContainer>
