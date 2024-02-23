@@ -3,11 +3,11 @@ import {
   HeaderWrapper,
   LogoImage,
   NavLinks,
+  RegisterLoginLink,
 } from "../styledComponents/headerStyles";
-import { Button } from "../styledComponents/utils";
+import { CartIcon } from "../styledComponents/utils";
 import { Link } from "react-router-dom";
 import logoImage from "../assets/giovannis-pizzeria-high-resolution-logo-transparent.png";
-import { FaShoppingCart } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
@@ -45,9 +45,12 @@ const Header = () => {
               </HashLink>
             </ul>
           </nav>
-          <Button bgcolor="#ffa07a">
-            <FaShoppingCart /> Go to cart
-          </Button>
+          <div style={{ display: "flex", gap: "4rem" }}>
+            <CartIcon />
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <RegisterLoginLink>Sign in</RegisterLoginLink>
+            </Link>
+          </div>
         </HeaderWrapper>
       </HeaderStyle>
     </>

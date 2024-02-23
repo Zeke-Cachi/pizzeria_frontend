@@ -79,3 +79,7 @@ export interface IHighlightedPizzas {
   hawaiianLink: string;
   buffaloLink: string;
 }
+
+export interface ILoginContainer {
+  img: string;
+}

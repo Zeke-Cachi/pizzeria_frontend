@@ -1,5 +1,6 @@
 import { ISecondaryTitle, IStyledButton } from "../Interfaces";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { FaShoppingCart } from "react-icons/fa";
 
 export const SecondaryTitle = styled.h2<ISecondaryTitle>`
   color: ${({ fontcolor }) => fontcolor};
@@ -26,5 +27,35 @@ export const Button = styled.button<IStyledButton>`
     color: #ffa07a;
     background: black;
     border: 2px solid #ffa07a;
+  }
+`;
+
+const animateCartIcon = keyframes`
+  0% {
+    transform: rotate(0deg);
+  },
+  25% {
+    transform: rotate(20deg);
+  },
+  50% {
+    transform: rotate(-20deg);
+  },
+  75% {
+    transform: rotate(20deg);
+  },
+  100% {
+    transform: rotate(0deg);
+  }
+
+`;
+
+export const CartIcon = styled(FaShoppingCart)`
+  color: white;
+  height: 1.7rem;
+  width: 1.7rem;
+  cursor: pointer;
+
+  &:hover {
+    animation: ${animateCartIcon} 500ms ease-in-out;
   }
 `;

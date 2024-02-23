@@ -29,5 +29,10 @@ export const NavLinks = styled.li`
   font-weight: 700;
   margin: 0 2rem;
   cursor: pointer;
-  text-decoration: none;
+`;
+
+export const RegisterLoginLink = styled.p`
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
 `;

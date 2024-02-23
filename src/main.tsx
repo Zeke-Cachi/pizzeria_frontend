@@ -6,11 +6,16 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
 import PizzaDetails from "./pages/PizzaDetails.tsx";
+import Login from "./pages/Login.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/pizza/:id/:pizzaName/:pizzaDescription/:pizzaBakeType/:pizzaPrice/:pizzaImg1/:pizzaImg2/:pizzaImg3",
