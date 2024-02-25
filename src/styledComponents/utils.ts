@@ -1,4 +1,4 @@
-import { ISecondaryTitle, IStyledButton } from "../Interfaces";
+import { ISecondaryTitle, IStyledButton, IHr } from "../Interfaces";
 import styled, { keyframes } from "styled-components";
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -15,10 +15,10 @@ export const Button = styled.button<IStyledButton>`
   background: ${({ bgcolor }) => bgcolor};
   font-size: ${({ buttonfontsize }) =>
     buttonfontsize ? buttonfontsize : `auto`};
-  color: white;
+  color: ${({ fontcolor }) => (fontcolor ? fontcolor : "white")};
   font-weight: 700;
   border-radius: 15px;
-  border: none;
+  border: ${({ border }) => (border ? border : "none")};
   transition: background 200ms ease-in-out;
   cursor: pointer;
   margin: ${({ buttonmargin }) => (buttonmargin ? buttonmargin : "0")};
@@ -58,4 +58,11 @@ export const CartIcon = styled(FaShoppingCart)`
   &:hover {
     animation: ${animateCartIcon} 500ms ease-in-out;
   }
+`;
+
+export const Hr = styled.hr<IHr>`
+  width: ${({ width }) => width};
+  border: 1px solid #dadada;
+  margin: 0 auto;
+  margin-top: 1rem;
 `;

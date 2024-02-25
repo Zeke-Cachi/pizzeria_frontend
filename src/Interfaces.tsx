@@ -41,6 +41,8 @@ export interface IStyledButton {
   buttonwidth?: string;
   buttonheight?: string;
   buttonfontsize?: string;
+  fontcolor?: string;
+  border?: string;
 }
 
 export interface ICarouselComponent {
@@ -82,4 +84,8 @@ export interface IHighlightedPizzas {
 
 export interface ILoginContainer {
   img: string;
+}
+
+export interface IHr {
+  width: string;
 }

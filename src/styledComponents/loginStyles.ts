@@ -23,7 +23,7 @@ export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 2rem;
 `;
 
 export const LoginInputContainer = styled.div`
@@ -43,4 +43,13 @@ export const LoginInput = styled.input`
   outline: none;
   border: 1px solid lightgray;
   width: 100%;
+
+  &::-webkit-input-placeholder {
+    font-style: italic;
+    color: lightgray;
+  }
+
+  &:-moz-placeholder {
+    font-style: italic;
+  }
 `;
