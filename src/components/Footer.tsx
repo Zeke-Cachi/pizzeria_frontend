@@ -16,9 +16,9 @@ import foodCertificate from "../assets/food-certificate.png";
 const Footer = () => {
   return (
     <FooterContainer>
-      <LogoImage src={logoImg} alt="company logo" logoheight="10rem" />
+      <LogoImage src={logoImg} alt="company logo" $logoheight="10rem" />
       <SocialMediaSection>
-        <SecondaryTitle fontcolor="white" top="1rem" size="1.5rem">
+        <SecondaryTitle $fontcolor="white" $top="1rem" $size="1.5rem">
           Follow us on social media
         </SecondaryTitle>
         <SocialMediaLinksContainer>

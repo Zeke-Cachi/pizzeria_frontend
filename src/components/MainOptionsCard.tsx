@@ -5,12 +5,12 @@ import {
 } from "../styledComponents/mainOptionsCardStyles";
 import { IMainOptionsProps } from "../Interfaces";
 
-const MainOptionsCard: React.FC<IMainOptionsProps> = ({ image, text }) => {
+const MainOptionsCard: React.FC<IMainOptionsProps> = ({ $image, $text }) => {
   return (
     <StyledMainOptionsCard>
-      <StyledMainOptionsCardTop image={image}></StyledMainOptionsCardTop>
+      <StyledMainOptionsCardTop $image={$image}></StyledMainOptionsCardTop>
 
-      <StyledMainOptionsCardBottom>{text}</StyledMainOptionsCardBottom>
+      <StyledMainOptionsCardBottom>{$text}</StyledMainOptionsCardBottom>
     </StyledMainOptionsCard>
   );
 };

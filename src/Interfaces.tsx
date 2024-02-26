@@ -3,18 +3,18 @@ export interface IOnClick {
 }
 
 export interface IMainOptionsProps {
-  image: string;
-  text: string;
+  $image: string;
+  $text: string;
 }
 
 export interface Image {
-  image: string;
+  $image: string;
 }
 
 export interface ISecondaryTitle {
-  fontcolor: string;
-  size: string;
-  top: string;
+  $fontcolor: string;
+  $size: string;
+  $top: string;
 }
 
 export interface IFetchPizzas {
@@ -36,22 +36,22 @@ export interface ICart {
 }
 
 export interface IStyledButton {
-  buttonmargin?: string;
-  bgcolor: string;
-  buttonwidth?: string;
-  buttonheight?: string;
-  buttonfontsize?: string;
-  fontcolor?: string;
-  border?: string;
+  $buttonmargin?: string;
+  $bgcolor: string;
+  $buttonwidth?: string;
+  $buttonheight?: string;
+  $buttonfontsize?: string;
+  $fontcolor?: string;
+  $border?: string;
 }
 
 export interface ICarouselComponent {
-  img1: string;
-  img2: string;
-  img3: string;
-  carouselHeight?: string;
-  carouselWidth?: string;
-  paddingtop?: string;
+  $img1: string;
+  $img2: string;
+  $img3: string;
+  $carouselHeight?: string;
+  $carouselWidth?: string;
+  $paddingtop?: string;
 }
 
 export interface IOptionalCarouselStyling {
@@ -60,8 +60,8 @@ export interface IOptionalCarouselStyling {
 }
 
 export interface ICarouselImg {
-  carouselimg: string;
-  paddingtop?: string;
+  $carouselimg: string;
+  $paddingtop?: string;
 }
 
 export interface IAbridgedInput {}
@@ -73,7 +73,7 @@ export interface ContactFormData {
 }
 
 export interface ILogoImg {
-  logoheight: string;
+  $logoheight: string;
 }
 
 export interface IHighlightedPizzas {
@@ -83,9 +83,9 @@ export interface IHighlightedPizzas {
 }
 
 export interface ILoginContainer {
-  img: string;
+  $img: string;
 }
 
 export interface IHr {
-  width: string;
+  $width: string;
 }

@@ -22,6 +22,6 @@ export const PizzaCard = styled.div`
 export const PizzaCardImg = styled.div<Image>`
   height: 50%;
   width: 100%;
-  background-image: ${({ image }) => `url(${image})`};
+  background-image: ${({ $image }) => `url(${$image})`};
   background-size: cover;
 `;

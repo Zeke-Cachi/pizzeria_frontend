@@ -25,7 +25,7 @@ export const Store = styled.div`
 `;
 
 export const StoreImg = styled.div<Image>`
-  background-image: ${({ image }) => `url(${image})`};
+  background-image: ${({ $image }) => `url(${$image})`};
   background-size: cover;
   background-position: center;
   height: 50%;

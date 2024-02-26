@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <HeaderStyle>
         <HeaderWrapper>
-          <LogoImage src={logoImage} alt="logo image" logoheight="4rem" />
+          <LogoImage src={logoImage} alt="logo image" $logoheight="4rem" />
           <nav>
             <ul
               style={{

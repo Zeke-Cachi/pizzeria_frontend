@@ -12,8 +12,8 @@ const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {
     <PizzaCardContainer>
       {pizzaList.map((pizza: IFetchPizzas) => (
         <PizzaCard key={pizza.pizzaId}>
-          <PizzaCardImg image={pizza.pizzaImg1!}></PizzaCardImg>
-          <SecondaryTitle fontcolor="black" size="1.5rem" top="1rem">
+          <PizzaCardImg $image={pizza.pizzaImg1!}></PizzaCardImg>
+          <SecondaryTitle $fontcolor="black" $size="1.5rem" $top="1rem">
             {pizza.pizzaName}
           </SecondaryTitle>
           <Link
@@ -25,7 +25,7 @@ const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {
               pizza.pizzaImg3!
             )}`}
           >
-            <Button buttonmargin="1rem 0 0 0" bgcolor="#ffa07a">
+            <Button $buttonmargin="1rem 0 0 0" $bgcolor="#ffa07a">
               ORDER NOW
             </Button>
           </Link>

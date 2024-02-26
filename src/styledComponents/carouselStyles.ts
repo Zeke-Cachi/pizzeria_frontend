@@ -8,7 +8,7 @@ export const OptionalCarouselStyling = styled.div<IOptionalCarouselStyling>`
 
 export const CarouselImg = styled.div<ICarouselImg>`
   position: relative;
-  padding-top: ${({ paddingtop }) => (paddingtop ? paddingtop : 0)};
+  padding-top: ${({ $paddingtop }) => ($paddingtop ? $paddingtop : 0)};
   overflow: hidden;
 
   &::before {
@@ -16,7 +16,7 @@ export const CarouselImg = styled.div<ICarouselImg>`
     display: block;
     position: absolute;
     inset: 0;
-    background-image: ${({ carouselimg }) => `url(${carouselimg})`};
+    background-image: ${({ $carouselimg }) => `url(${$carouselimg})`};
     background-size: cover;
     background-position: center;
   }

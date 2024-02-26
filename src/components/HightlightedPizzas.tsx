@@ -27,7 +27,7 @@ const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({
           <p>PEPERONNI</p>
 
           <Link to={pepperoniLink}>
-            <Button bgcolor="#ffa07a">ORDER NOW</Button>
+            <Button $bgcolor="#ffa07a">ORDER NOW</Button>
           </Link>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>
@@ -40,7 +40,7 @@ const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({
         <MainPizzaPresentationCardLower>
           <p>HAWAIIAN</p>
           <Link to={hawaiianLink}>
-            <Button bgcolor="#ffa07a">ORDER NOW</Button>
+            <Button $bgcolor="#ffa07a">ORDER NOW</Button>
           </Link>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>
@@ -53,7 +53,7 @@ const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({
         <MainPizzaPresentationCardLower>
           <p>BUFFALO CHICKEN</p>
           <Link to={buffaloLink}>
-            <Button bgcolor="#ffa07a">ORDER NOW</Button>
+            <Button $bgcolor="#ffa07a">ORDER NOW</Button>
           </Link>
         </MainPizzaPresentationCardLower>
       </MainPizzaPresentationCard>

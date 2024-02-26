@@ -4,10 +4,9 @@ import {
   InputContainer,
   FormInput,
   FormTextArea,
-  ErrorMsg,
   SuccessMsg,
 } from "../styledComponents/contactFormStyles";
-import { SecondaryTitle, Button } from "../styledComponents/utils";
+import { SecondaryTitle, Button, ErrorMsg } from "../styledComponents/utils";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -67,7 +66,7 @@ const ContactForm = () => {
 
   return (
     <ContactFormContainer id="contact">
-      <SecondaryTitle fontcolor="black" size="2.5rem" top="3rem">
+      <SecondaryTitle $fontcolor="black" $size="2.5rem" $top="3rem">
         Contact us
       </SecondaryTitle>
       <StyledContactForm onSubmit={handleSubmit(submitFunction)}>
@@ -100,7 +99,7 @@ const ContactForm = () => {
           <FormTextArea {...register("message")} placeholder="Enter message" />
           {errors.message && <ErrorMsg>{errors.message.message}</ErrorMsg>}
         </InputContainer>
-        <Button buttonmargin="1rem 0 0 0" bgcolor="#222222">
+        <Button $buttonmargin="1rem 0 0 0" $bgcolor="#222222">
           Submit
         </Button>
       </StyledContactForm>

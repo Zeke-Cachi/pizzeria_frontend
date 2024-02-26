@@ -44,16 +44,16 @@ const PizzaDetails = () => {
       <PizzaDetailsContainer>
         <PizzaDetailsMainCard>
           <CarouselComponent
-            img1={pizzaImg1!}
-            img2={pizzaImg2!}
-            img3={pizzaImg3!}
-            carouselHeight="100%"
-            carouselWidth="50%"
-            paddingtop="100%"
+            $img1={pizzaImg1!}
+            $img2={pizzaImg2!}
+            $img3={pizzaImg3!}
+            $carouselHeight="100%"
+            $carouselWidth="50%"
+            $paddingtop="100%"
           />
           <PizzaData>
             <div>
-              <SecondaryTitle fontcolor="black" size="3rem" top="2rem">
+              <SecondaryTitle $fontcolor="black" $size="3rem" $top="2rem">
                 {pizzaName}
               </SecondaryTitle>
               <p>{bakeType}</p>
@@ -63,11 +63,11 @@ const PizzaDetails = () => {
             </PizzaDetailsDescription>
             <PizzaDetailsPrice>${pizzaPrice}</PizzaDetailsPrice>
             <Button
-              buttonmargin="2rem auto 0"
-              bgcolor="#ffa07a"
-              buttonheight="4rem"
-              buttonwidth="12rem"
-              buttonfontsize="1.2rem"
+              $buttonmargin="2rem auto 0"
+              $bgcolor="#ffa07a"
+              $buttonheight="4rem"
+              $buttonwidth="12rem"
+              $buttonfontsize="1.2rem"
               onClick={() => dispatchAddToCart(Number(id))}
             >
               Add to cart

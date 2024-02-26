@@ -13,9 +13,9 @@ const MainOptions = () => {
   return (
     <StyledMainOptions>
       <MainOptionsContainer>
-        <MainOptionsCard image={image1} text="HANDMADE PIZZAS" />
-        <MainOptionsCard image={image2} text="TRY OUR NEW FLAVOURS" />
-        <MainOptionsCard image={image3} text="HALF-HOUR DELIVERIES" />
+        <MainOptionsCard $image={image1} $text="HANDMADE PIZZAS" />
+        <MainOptionsCard $image={image2} $text="TRY OUR NEW FLAVOURS" />
+        <MainOptionsCard $image={image3} $text="HALF-HOUR DELIVERIES" />
       </MainOptionsContainer>
       <MainOptionsContainer>
         <MainOptionsBanner src={banner} alt="banner from main section" />

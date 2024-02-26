@@ -4,7 +4,7 @@ import { ILoginContainer } from "../Interfaces";
 export const LoginContainer = styled.section<ILoginContainer>`
   width: 100%;
   height: 90vh;
-  background-image: ${({ img }) => `url(${img})`};
+  background-image: ${({ $img }) => `url(${$img})`};
   background-size: cover;
   display: grid;
   place-items: center;
@@ -34,6 +34,7 @@ export const LoginInputContainer = styled.div`
   gap: 0.5rem;
   text-align: left;
   width: 80%;
+  position: relative;
 `;
 
 export const LoginInput = styled.input`

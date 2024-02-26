@@ -10,12 +10,12 @@ import {
 } from "../styledComponents/carouselStyles";
 
 const CarouselComponent: React.FC<ICarouselComponent> = ({
-  img1,
-  img2,
-  img3,
-  carouselHeight,
-  carouselWidth,
-  paddingtop,
+  $img1,
+  $img2,
+  $img3,
+  $carouselHeight,
+  $carouselWidth,
+  $paddingtop,
 }) => {
   function SampleNextArrow(props: IOnClick) {
     const { onClick } = props;
@@ -40,13 +40,22 @@ const CarouselComponent: React.FC<ICarouselComponent> = ({
 
   return (
     <OptionalCarouselStyling
-      carouselheight={carouselHeight}
-      carouselwidth={carouselWidth}
+      carouselheight={$carouselHeight}
+      carouselwidth={$carouselWidth}
     >
       <Slider {...settings}>
-        <CarouselImg carouselimg={img1} paddingtop={paddingtop}></CarouselImg>
-        <CarouselImg carouselimg={img2} paddingtop={paddingtop}></CarouselImg>
-        <CarouselImg carouselimg={img3} paddingtop={paddingtop}></CarouselImg>
+        <CarouselImg
+          $carouselimg={$img1}
+          $paddingtop={$paddingtop}
+        ></CarouselImg>
+        <CarouselImg
+          $carouselimg={$img2}
+          $paddingtop={$paddingtop}
+        ></CarouselImg>
+        <CarouselImg
+          $carouselimg={$img3}
+          $paddingtop={$paddingtop}
+        ></CarouselImg>
       </Slider>
     </OptionalCarouselStyling>
   );

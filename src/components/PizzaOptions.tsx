@@ -47,11 +47,11 @@ const PizzaOptions: React.FC<{ pizzaList: ICart }> = ({ pizzaList }) => {
 
   return (
     <StyledPizzaOptions id="all-pizzas">
-      <SecondaryTitle fontcolor="gray" size={"3rem"} top={"0"}>
+      <SecondaryTitle $fontcolor="gray" $size={"3rem"} $top={"0"}>
         Choose your pizza
       </SecondaryTitle>
 
-      <SecondaryTitle fontcolor="gray" size={"2rem"} top={"2rem"}>
+      <SecondaryTitle $fontcolor="gray" $size={"2rem"} $top={"2rem"}>
         Picks of the week
       </SecondaryTitle>
 
@@ -61,7 +61,7 @@ const PizzaOptions: React.FC<{ pizzaList: ICart }> = ({ pizzaList }) => {
         buffaloLink={buffaloLink}
       />
 
-      <SecondaryTitle fontcolor="gray" size={"2rem"} top={"5rem"}>
+      <SecondaryTitle $fontcolor="gray" $size={"2rem"} $top={"5rem"}>
         Our full selection
       </SecondaryTitle>
       <AllPizzas pizzaList={pizzaList.items} />

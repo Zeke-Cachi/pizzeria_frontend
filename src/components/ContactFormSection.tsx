@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 
 const ContactFormSection = () => {
   return (
-    <ContactFormSectionContainer image={image}>
+    <ContactFormSectionContainer $image={image}>
       <ContactForm />
     </ContactFormSectionContainer>
   );

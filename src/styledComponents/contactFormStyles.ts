@@ -28,14 +28,6 @@ export const FormInput = styled.input`
   }
 `;
 
-export const ErrorMsg = styled.span`
-  font-weight: 700;
-  color: red;
-  font-size: 0.8rem;
-  position: absolute;
-  bottom: -1.2rem;
-`;
-
 export const FormTextArea = styled.textarea`
   border-radius: 10px;
   height: 10rem;

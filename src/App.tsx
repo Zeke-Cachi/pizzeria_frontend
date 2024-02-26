@@ -26,10 +26,10 @@ function App() {
     <>
       <Header />
       <CarouselComponent
-        img1={image1}
-        img2={image2}
-        img3={image3}
-        paddingtop="calc(500 / 1920 * 100%)"
+        $img1={image1}
+        $img2={image2}
+        $img3={image3}
+        $paddingtop="calc(500 / 1920 * 100%)"
       />
       <MainOptions />
       <PizzaOptions pizzaList={pizzaList} />

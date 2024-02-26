@@ -19,7 +19,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const LogoImage = styled.img<ILogoImg>`
-  height: ${({ logoheight }) => logoheight};
+  height: ${({ $logoheight }) => $logoheight};
   place-self: center;
 `;
 
