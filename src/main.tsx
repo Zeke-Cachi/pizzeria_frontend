@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
 import PizzaDetails from "./pages/PizzaDetails.tsx";
 import Login from "./pages/Login.tsx";
+import Register from "./pages/Register.tsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     path: "/pizza/:id/:pizzaName/:pizzaDescription/:pizzaBakeType/:pizzaPrice/:pizzaImg1/:pizzaImg2/:pizzaImg3",

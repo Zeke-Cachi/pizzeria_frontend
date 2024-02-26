@@ -15,17 +15,23 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { ErrorMsg } from "../styledComponents/utils";
+import { IRegisterData } from "../Interfaces";
 import toast, { Toaster } from "react-hot-toast";
 
 //---------------------------------------------------------------------------------------------------------------
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
 
-  const loginValidationSchema = yup
+  const registerValidationSchema = yup
     .object({
+      name: yup.string().required("Missing name!"),
+      lastname: yup.string().required("Missing lastname!"),
       email: yup.string().required("Missing email!").email("Invalid email"),
       password: yup.string().required("Missing password!"),
+      phoneNumber: yup.string(),
+      address: yup.string().required("Missing address!"),
+      city: yup.string().required("Missing city name!"),
     })
     .required();
 
@@ -35,31 +41,36 @@ const Login = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(loginValidationSchema),
+    resolver: yupResolver(registerValidationSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const submitLogin = async (data: { email: string; password: string }) => {
-    const userLoginData = {
+  const submitRegister = async (data: IRegisterData) => {
+    const userRegisterData = {
+      name: data.name,
+      lastname: data.lastname,
       email: data.email,
       password: data.password,
+      phoneNumber: Number(data.phoneNumber),
+      address: data.address,
+      city: data.city,
     };
     const response = await axios.post(
-      import.meta.env.VITE_FORM_LOGIN,
-      userLoginData
+      import.meta.env.VITE_FORM_REGISTER,
+      userRegisterData
     );
-    if (response.status === 200) {
-      console.log("Great login success");
+    if (response.status === 201) {
+      console.log("Great register success");
       reset();
       toast.success("Successfully Logged in!");
       setTimeout(() => {
         navigate("/");
       }, 750);
     } else {
-      console.log("Great login failure");
+      console.log("Great register failure");
     }
   };
 
@@ -72,9 +83,30 @@ const Login = () => {
       <LoginContainer $img={loginBg}>
         <LoginFormContainer>
           <SecondaryTitle $fontcolor="black" $top="1rem" $size="2.5rem">
-            Sign in
+            Sign up
           </SecondaryTitle>
-          <LoginForm onSubmit={handleSubmit(submitLogin)}>
+          <LoginForm onSubmit={handleSubmit(submitRegister)}>
+            <LoginInputContainer>
+              <label style={{ alignSelf: "self-start" }}>Name</label>
+              <LoginInput
+                type="text"
+                placeholder="enter name"
+                {...register("name")}
+              />
+              {errors.name && <ErrorMsg>{errors.name.message}</ErrorMsg>}
+            </LoginInputContainer>
+            <LoginInputContainer>
+              <label style={{ alignSelf: "self-start" }}>Lastname</label>
+              <LoginInput
+                type="text"
+                placeholder="enter lastname"
+                {...register("lastname")}
+              />
+              {errors.lastname && (
+                <ErrorMsg>{errors.lastname.message}</ErrorMsg>
+              )}
+            </LoginInputContainer>
+
             <LoginInputContainer>
               <label style={{ alignSelf: "self-start" }}>Email</label>
               <LoginInput
@@ -94,6 +126,35 @@ const Login = () => {
               {errors.password && (
                 <ErrorMsg>{errors.password.message}</ErrorMsg>
               )}
+            </LoginInputContainer>
+            <LoginInputContainer>
+              <label style={{ alignSelf: "self-start" }}>Phone Number</label>
+              <LoginInput
+                type="tel"
+                placeholder="enter phone number"
+                {...register("phoneNumber")}
+              />
+              {errors.phoneNumber && (
+                <ErrorMsg>{errors.phoneNumber.message}</ErrorMsg>
+              )}
+            </LoginInputContainer>
+            <LoginInputContainer>
+              <label style={{ alignSelf: "self-start" }}>Address</label>
+              <LoginInput
+                type="text"
+                placeholder="enter address"
+                {...register("address")}
+              />
+              {errors.address && <ErrorMsg>{errors.address.message}</ErrorMsg>}
+            </LoginInputContainer>
+            <LoginInputContainer>
+              <label style={{ alignSelf: "self-start" }}>City</label>
+              <LoginInput
+                type="text"
+                placeholder="enter your city"
+                {...register("city")}
+              />
+              {errors.city && <ErrorMsg>{errors.city.message}</ErrorMsg>}
             </LoginInputContainer>
             <Button
               type="submit"
@@ -128,7 +189,7 @@ const Login = () => {
               Login with Google
             </Button>
             <p>
-              Not registered? sign up <Link to="/register">here</Link>
+              Already have an account? sign in <Link to="/register">here</Link>
             </p>
           </div>
         </LoginFormContainer>
@@ -138,4 +199,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

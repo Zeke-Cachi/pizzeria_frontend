@@ -3,15 +3,16 @@ import { ILoginContainer } from "../Interfaces";
 
 export const LoginContainer = styled.section<ILoginContainer>`
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
   background-image: ${({ $img }) => `url(${$img})`};
   background-size: cover;
   display: grid;
   place-items: center;
+  padding: 1rem 0;
 `;
 
 export const LoginFormContainer = styled.div`
-  height: 50vh;
+  min-height: 50vh;
   width: 40rem;
   background-color: white;
   border-radius: 15px;
