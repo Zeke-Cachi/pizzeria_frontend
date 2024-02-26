@@ -49,7 +49,7 @@ const Login = () => {
       import.meta.env.VITE_FORM_LOGIN,
       userLoginData
     );
-    if (response.data.status === 200) {
+    if (response.status === 200) {
       console.log("Great success");
       reset();
     } else {
