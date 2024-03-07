@@ -22,6 +22,12 @@ function App() {
     if (!pizzaList.items.length) dispatch(fetchPizzas());
   }, []);
 
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const tokenParam = searchParams.get("token");
+    tokenParam ? console.log(tokenParam) : console.log("No params!");
+  }, []);
+
   return (
     <>
       <Header />

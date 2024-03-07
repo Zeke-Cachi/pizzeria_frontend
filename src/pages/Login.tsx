@@ -116,17 +116,20 @@ const Login = () => {
               height: "7rem",
             }}
           >
-            <Button
-              $buttonwidth="9rem"
-              $buttonheight="3rem"
-              $buttonmargin=".5rem"
-              $buttonfontsize="1.1rem"
-              $bgcolor="white"
-              $fontcolor="black"
-              $border="2px solid black"
-            >
-              Login with Google
-            </Button>
+            <a href="http://localhost:8080/oauth2/authorization/google">
+              <Button
+                $buttonwidth="9rem"
+                $buttonheight="3rem"
+                $buttonmargin=".5rem"
+                $buttonfontsize="1.1rem"
+                $bgcolor="white"
+                $fontcolor="black"
+                $border="2px solid black"
+              >
+                Login with Google
+              </Button>
+            </a>
+
             <p>
               Not registered? sign up <Link to="/register">here</Link>
             </p>
