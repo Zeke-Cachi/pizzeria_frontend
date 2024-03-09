@@ -4,13 +4,18 @@ import {
   LogoImage,
   NavLinks,
   RegisterLoginLink,
+  ProfilePic,
 } from "../styledComponents/headerStyles";
 import { CartIcon } from "../styledComponents/utils";
 import { Link } from "react-router-dom";
 import logoImage from "../assets/giovannis-pizzeria-high-resolution-logo-transparent.png";
 import { HashLink } from "react-router-hash-link";
+import { useSelector } from "react-redux";
+import { RootState } from "../state/store";
 
 const Header = () => {
+  const userData = useSelector((state: RootState) => state.userData);
+
   return (
     <>
       <HeaderStyle>
@@ -45,11 +50,18 @@ const Header = () => {
               </HashLink>
             </ul>
           </nav>
-          <div style={{ display: "flex", gap: "4rem" }}>
+          <div style={{ display: "flex", gap: "4rem", alignItems: "center" }}>
             <CartIcon />
-            <Link to="/login" style={{ textDecoration: "none" }}>
-              <RegisterLoginLink>Sign in</RegisterLoginLink>
-            </Link>
+            {userData.profileImage ? (
+              <ProfilePic
+                src={userData.profileImage}
+                alt="user profile image"
+              />
+            ) : (
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                <RegisterLoginLink>Sign in</RegisterLoginLink>
+              </Link>
+            )}
           </div>
         </HeaderWrapper>
       </HeaderStyle>

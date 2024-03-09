@@ -14,8 +14,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../state/store";
 import useCartActions from "../customHooks/useCartActions";
 
-import { useEffect } from "react";
-
 const PizzaDetails = () => {
   const {
     id,
@@ -30,13 +28,10 @@ const PizzaDetails = () => {
 
   const bakeType = pizzaBakeType?.replace("_", " ");
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const cart = useSelector((state: RootState) => state.pizzaList);
 
   const { dispatchAddToCart } = useCartActions();
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   return (
     <>

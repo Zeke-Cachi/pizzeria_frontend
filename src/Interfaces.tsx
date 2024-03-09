@@ -99,3 +99,10 @@ export interface IRegisterData {
   address: string;
   city: string;
 }
+
+export interface IUserData {
+  email: string;
+  lastname: string;
+  name: string;
+  profileImage: string;
+}

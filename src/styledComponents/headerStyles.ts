@@ -36,3 +36,10 @@ export const RegisterLoginLink = styled.p`
   font-size: 1.3rem;
   cursor: pointer;
 `;
+
+export const ProfilePic = styled.img`
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+`;

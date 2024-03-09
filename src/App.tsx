@@ -13,6 +13,8 @@ import { fetchPizzas } from "./state/slices/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "./state/store";
 import { ICart } from "./Interfaces";
+import { jwtDecode } from "jwt-decode";
+import { storeUserData } from "./state/slices/UserSlice";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -25,7 +27,12 @@ function App() {
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const tokenParam = searchParams.get("token");
-    tokenParam ? console.log(tokenParam) : console.log("No params!");
+    if (tokenParam) {
+      const decodedJwt = jwtDecode(tokenParam);
+      dispatch(storeUserData(decodedJwt));
+    } else {
+      console.log("No params!");
+    }
   }, []);
 
   return (
