@@ -1,8 +1,8 @@
-import { StyledPizzaOptions } from "../styledComponents/pizzaOptionsStyles";
-import { SecondaryTitle } from "../styledComponents/utils";
-import HightlightedPizzas from "./HightlightedPizzas";
-import AllPizzas from "./AllPizzas";
-import { ICart } from "../Interfaces";
+import { StyledPizzaOptions } from "./pizzaOptionsStyles";
+import { SecondaryTitle } from "../../styledComponentsUtils/utils";
+import HightlightedPizzas from "../highlightedPizzas/HightlightedPizzas";
+import AllPizzas from "../allPizzas/AllPizzas";
+import { ICart } from "../../Interfaces";
 
 const PizzaOptions: React.FC<{ pizzaList: ICart }> = ({ pizzaList }) => {
   //HAD TO HARDCODE THESE SINCE I ONLY FOUND THE APPROPIATE IMAGES FOR THESE THREE PIZZAS :/

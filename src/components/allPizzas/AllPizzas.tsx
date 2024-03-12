@@ -1,10 +1,6 @@
-import {
-  PizzaCard,
-  PizzaCardContainer,
-  PizzaCardImg,
-} from "../styledComponents/allPizzasStyles";
-import { SecondaryTitle, Button } from "../styledComponents/utils";
-import { IFetchPizzas } from "../Interfaces";
+import { PizzaCard, PizzaCardContainer, PizzaCardImg } from "./allPizzasStyles";
+import { SecondaryTitle, Button } from "../../styledComponentsUtils/utils";
+import { IFetchPizzas } from "../../Interfaces";
 import { Link } from "react-router-dom";
 
 const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {

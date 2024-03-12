@@ -4,10 +4,10 @@ import {
   StoreImg,
   StoreInfo,
   StoresContainer,
-} from "../styledComponents/storesStyles";
-import { SecondaryTitle } from "../styledComponents/utils";
-import storeImg1 from "../assets/pizza-store-1.jpg";
-import storeImg2 from "../assets/pizza-store-2.webp";
+} from "./storesStyles";
+import { SecondaryTitle } from "../../styledComponentsUtils/utils";
+import storeImg1 from "../../assets/pizza-store-1.jpg";
+import storeImg2 from "../../assets/pizza-store-2.webp";
 
 const Stores = () => {
   return (

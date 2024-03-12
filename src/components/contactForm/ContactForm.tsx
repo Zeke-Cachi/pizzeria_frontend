@@ -5,13 +5,17 @@ import {
   FormInput,
   FormTextArea,
   SuccessMsg,
-} from "../styledComponents/contactFormStyles";
-import { SecondaryTitle, Button, ErrorMsg } from "../styledComponents/utils";
+} from "./contactFormStyles";
+import {
+  SecondaryTitle,
+  Button,
+  ErrorMsg,
+} from "../../styledComponentsUtils/utils";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
-import { ContactFormData } from "../Interfaces";
+import { ContactFormData } from "../../Interfaces";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {

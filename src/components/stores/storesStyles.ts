@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Image } from "../Interfaces";
+import { Image } from "../../Interfaces";
 
 export const StoresContainer = styled.section`
   height: 70vh;

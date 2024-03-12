@@ -32,21 +32,11 @@ export const Button = styled.button<IStyledButton>`
 
 const animateCartIcon = keyframes`
   0% {
-    transform: rotate(0deg);
-  },
-  25% {
-    transform: rotate(20deg);
-  },
-  50% {
-    transform: rotate(-20deg);
-  },
-  75% {
-    transform: rotate(20deg);
-  },
-  100% {
-    transform: rotate(0deg);
+    transform: scale(1);
   }
-
+  100% {
+    transform: scale(1.2);
+  }
 `;
 
 export const CartIcon = styled(FaShoppingCart)`
@@ -56,7 +46,7 @@ export const CartIcon = styled(FaShoppingCart)`
   cursor: pointer;
 
   &:hover {
-    animation: ${animateCartIcon} 500ms ease-in-out;
+    animation: ${animateCartIcon} 250ms forwards;
   }
 `;
 

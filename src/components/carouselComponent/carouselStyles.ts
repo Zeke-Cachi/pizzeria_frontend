@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ICarouselImg, IOptionalCarouselStyling } from "../Interfaces";
+import { ICarouselImg, IOptionalCarouselStyling } from "../../Interfaces";
 
 export const OptionalCarouselStyling = styled.div<IOptionalCarouselStyling>`
   width: ${({ carouselwidth }) => (carouselwidth ? carouselwidth : "auto")};

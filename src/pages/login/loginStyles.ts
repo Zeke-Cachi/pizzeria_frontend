@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ILoginContainer } from "../Interfaces";
+import { ILoginContainer } from "../../Interfaces";
 
 export const LoginContainer = styled.section<ILoginContainer>`
   width: 100%;

@@ -5,8 +5,8 @@ import App from "./App.tsx";
 import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./state/store.ts";
-import PizzaDetails from "./pages/PizzaDetails.tsx";
-import Login from "./pages/Login.tsx";
+import PizzaDetails from "./pages/pizzaDetails/PizzaDetails.tsx";
+import Login from "./pages/login/Login.tsx";
 import Register from "./pages/Register.tsx";
 
 const router = createBrowserRouter([

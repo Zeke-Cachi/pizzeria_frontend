@@ -2,12 +2,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import "../index.css";
-import { ICarouselComponent, IOnClick } from "../Interfaces";
-import {
-  CarouselImg,
-  OptionalCarouselStyling,
-} from "../styledComponents/carouselStyles";
+import "../../index.css";
+import { ICarouselComponent, IOnClick } from "../../Interfaces";
+import { CarouselImg, OptionalCarouselStyling } from "./carouselStyles";
 
 const CarouselComponent: React.FC<ICarouselComponent> = ({
   $img1,

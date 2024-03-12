@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ILogoImg } from "../Interfaces";
+import { ILogoImg } from "../../Interfaces";
 
 export const HeaderStyle = styled.header`
   height: 6rem;

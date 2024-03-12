@@ -5,14 +5,14 @@ import {
   PizzaDetailsDescription,
   PizzaDetailsMainCard,
   PizzaDetailsPrice,
-} from "../styledComponents/pizzaDetailsStyles";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CarouselComponent from "../components/CarouselComponent";
-import { Button, SecondaryTitle } from "../styledComponents/utils";
+} from "./pizzaDetailsStyles";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import CarouselComponent from "../../components/carouselComponent/CarouselComponent";
+import { Button, SecondaryTitle } from "../../styledComponentsUtils/utils";
 import { useSelector } from "react-redux";
-import { RootState } from "../state/store";
-import useCartActions from "../customHooks/useCartActions";
+import { RootState } from "../../state/store";
+import useCartActions from "../../customHooks/useCartActions";
 
 const PizzaDetails = () => {
   const {

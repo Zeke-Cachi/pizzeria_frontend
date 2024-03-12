@@ -4,14 +4,14 @@ import {
   SocialMediaLinksContainer,
   SocialMediaSection,
   FoodCertificateImg,
-} from "../styledComponents/footerStyles";
-import { LogoImage } from "../styledComponents/headerStyles";
-import logoImg from "../assets/giovannis-pizzeria-high-resolution-logo-transparent.png";
-import { SecondaryTitle } from "../styledComponents/utils";
-import instagramImg from "../assets/instagram.png";
-import facebookImg from "../assets/facebook.png";
-import twitterImg from "../assets/twitter.png";
-import foodCertificate from "../assets/food-certificate.png";
+} from "./footerStyles";
+import { LogoImage } from "../header/headerStyles";
+import logoImg from "../../assets/giovannis-pizzeria-high-resolution-logo-transparent.png";
+import { SecondaryTitle } from "../../styledComponentsUtils/utils";
+import instagramImg from "../../assets/instagram.png";
+import facebookImg from "../../assets/facebook.png";
+import twitterImg from "../../assets/twitter.png";
+import foodCertificate from "../../assets/food-certificate.png";
 
 const Footer = () => {
   return (

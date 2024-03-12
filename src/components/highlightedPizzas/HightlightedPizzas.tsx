@@ -1,14 +1,14 @@
-import peperonni from "../assets/peperonni-presentation.png";
-import buffalo from "../assets/buffalo-wing-presentation.png";
-import hawaii from "../assets/Hawaiian-presentation.png";
+import peperonni from "../../assets/peperonni-presentation.png";
+import buffalo from "../../assets/buffalo-wing-presentation.png";
+import hawaii from "../../assets/Hawaiian-presentation.png";
 import {
   MainPizzaPresentationCard,
   MainPizzaOptionsCardContainer,
   MainPizzaPresentationCardImg,
   MainPizzaPresentationCardLower,
-} from "../styledComponents/highlightedPizzasStyles";
-import { Button } from "../styledComponents/utils";
-import { IHighlightedPizzas } from "../Interfaces";
+} from "./highlightedPizzasStyles";
+import { Button } from "../../styledComponentsUtils/utils";
+import { IHighlightedPizzas } from "../../Interfaces";
 import { Link } from "react-router-dom";
 
 const HightlightedPizzas: React.FC<IHighlightedPizzas> = ({

@@ -1,5 +1,5 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
 import loginBg from "../assets/login-bg.jpg";
 import {
   LoginContainer,
@@ -7,14 +7,14 @@ import {
   LoginFormContainer,
   LoginInput,
   LoginInputContainer,
-} from "../styledComponents/loginStyles";
-import { Button, Hr, SecondaryTitle } from "../styledComponents/utils";
+} from "./login/loginStyles";
+import { Button, Hr, SecondaryTitle } from "../styledComponentsUtils/utils";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { ErrorMsg } from "../styledComponents/utils";
+import { ErrorMsg } from "../styledComponentsUtils/utils";
 import { IRegisterData } from "../Interfaces";
 import toast, { Toaster } from "react-hot-toast";
 

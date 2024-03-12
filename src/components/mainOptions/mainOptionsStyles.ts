@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Image } from "../Interfaces";
+import { Image } from "../../Interfaces";
 
 export const StyledMainOptions = styled.section`
   height: 700px;

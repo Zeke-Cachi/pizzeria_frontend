@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Image } from "../Interfaces";
+import { Image } from "../../Interfaces";
 
 export const StyledMainOptionsCard = styled.div`
   height: 20rem;
@@ -22,7 +22,7 @@ export const StyledMainOptionsCardTop = styled.div<Image>`
   height: 50%;
   width: 100%;
   background-image: ${({ $image }) => `url(${$image})`};
-  transition: background-size 250ms ease-in-out;
+  transition: background-size 1.5s ease-in-out;
 `;
 
 export const StyledMainOptionsCardBottom = styled.div`
