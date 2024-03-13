@@ -63,9 +63,11 @@ const Header = () => {
           >
             <div style={{ position: "relative" }}>
               <CartIcon />
-              <CartNumericDisplay $iscartempty={cart.cart.length}>
-                {cart.cart.length}
-              </CartNumericDisplay>
+              {cart.cart.length ? (
+                <CartNumericDisplay $iscartempty={cart.cart.length}>
+                  {cart.cart.length}
+                </CartNumericDisplay>
+              ) : null}
             </div>
 
             {userData.profileImage ? (

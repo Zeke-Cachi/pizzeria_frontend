@@ -46,7 +46,6 @@ export const ProfilePic = styled.img`
 
 export const CartNumericDisplay = styled.div<ICartCounterDisplay>`
   position: absolute;
-  display: ${({ $iscartempty }) => ($iscartempty ? "none" : "block")};
   background: red;
   border-radius: 100%;
   top: -0.3rem;
@@ -58,4 +57,5 @@ export const CartNumericDisplay = styled.div<ICartCounterDisplay>`
   display: flex;
   align-items: start;
   justify-content: center;
+  font-weight: 700;
 `;
