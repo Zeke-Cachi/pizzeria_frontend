@@ -106,3 +106,7 @@ export interface IUserData {
   name: string;
   profileImage: string;
 }
+
+export interface ICartCounterDisplay {
+  $iscartempty: number;
+}

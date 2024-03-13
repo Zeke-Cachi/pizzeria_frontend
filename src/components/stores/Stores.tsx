@@ -31,7 +31,7 @@ const Stores = () => {
           <StoreImg $image={storeImg2}></StoreImg>
           <StoreInfo>
             <SecondaryTitle $fontcolor="black" $top="0rem" $size="1.5rem">
-              Address: 123 Main Street, Boston, MA 02108
+              123 Main Street, Boston, MA 02108
             </SecondaryTitle>
             <SecondaryTitle $fontcolor="black" $top="0rem" $size="1.2rem">
               Phone number: (617) 555-1234

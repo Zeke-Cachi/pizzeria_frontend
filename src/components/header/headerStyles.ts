@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ILogoImg } from "../../Interfaces";
+import { ILogoImg, ICartCounterDisplay } from "../../Interfaces";
 
 export const HeaderStyle = styled.header`
   height: 6rem;
@@ -42,4 +42,20 @@ export const ProfilePic = styled.img`
   height: 3rem;
   width: 3rem;
   cursor: pointer;
+`;
+
+export const CartNumericDisplay = styled.div<ICartCounterDisplay>`
+  position: absolute;
+  display: ${({ $iscartempty }) => ($iscartempty ? "none" : "block")};
+  background: red;
+  border-radius: 100%;
+  top: -0.3rem;
+  right: -0.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: start;
+  justify-content: center;
 `;

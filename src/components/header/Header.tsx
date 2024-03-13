@@ -5,6 +5,7 @@ import {
   NavLinks,
   RegisterLoginLink,
   ProfilePic,
+  CartNumericDisplay,
 } from "./headerStyles";
 import { CartIcon } from "../../styledComponentsUtils/utils";
 import { Link } from "react-router-dom";
@@ -15,6 +16,7 @@ import { RootState } from "../../state/store";
 
 const Header = () => {
   const userData = useSelector((state: RootState) => state.userData);
+  const cart = useSelector((state: RootState) => state.pizzaList);
 
   return (
     <>
@@ -52,8 +54,20 @@ const Header = () => {
               </HashLink>
             </ul>
           </nav>
-          <div style={{ display: "flex", gap: "4rem", alignItems: "center" }}>
-            <CartIcon />
+          <div
+            style={{
+              display: "flex",
+              gap: "4rem",
+              alignItems: "center",
+            }}
+          >
+            <div style={{ position: "relative" }}>
+              <CartIcon />
+              <CartNumericDisplay $iscartempty={cart.cart.length}>
+                {cart.cart.length}
+              </CartNumericDisplay>
+            </div>
+
             {userData.profileImage ? (
               <ProfilePic
                 src={userData.profileImage}
