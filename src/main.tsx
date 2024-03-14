@@ -8,6 +8,7 @@ import { store } from "./state/store.ts";
 import PizzaDetails from "./pages/pizzaDetails/PizzaDetails.tsx";
 import Login from "./pages/login/Login.tsx";
 import Register from "./pages/Register.tsx";
+import Cart from "./pages/cart/Cart.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/pizza/:id/:pizzaName/:pizzaDescription/:pizzaBakeType/:pizzaPrice/:pizzaImg1/:pizzaImg2/:pizzaImg3",
     element: <PizzaDetails />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
 ]);
 

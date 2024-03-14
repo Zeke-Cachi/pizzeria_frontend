@@ -62,7 +62,9 @@ const Header = () => {
             }}
           >
             <div style={{ position: "relative" }}>
-              <CartIcon />
+              <Link to="/cart">
+                <CartIcon />
+              </Link>
               {cart.cart.length ? (
                 <CartNumericDisplay $iscartempty={cart.cart.length}>
                   {cart.cart.length}

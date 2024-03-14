@@ -10,8 +10,6 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import CarouselComponent from "../../components/carouselComponent/CarouselComponent";
 import { Button, SecondaryTitle } from "../../styledComponentsUtils/utils";
-import { useSelector } from "react-redux";
-import { RootState } from "../../state/store";
 import useCartActions from "../../customHooks/useCartActions";
 
 const PizzaDetails = () => {
@@ -27,9 +25,6 @@ const PizzaDetails = () => {
   } = useParams();
 
   const bakeType = pizzaBakeType?.replace("_", " ");
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const cart = useSelector((state: RootState) => state.pizzaList);
 
   const { dispatchAddToCart } = useCartActions();
 

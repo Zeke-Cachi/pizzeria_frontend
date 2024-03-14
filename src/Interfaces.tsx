@@ -110,3 +110,7 @@ export interface IUserData {
 export interface ICartCounterDisplay {
   $iscartempty: number;
 }
+
+export interface ICartCardImg {
+  $img: string;
+}
