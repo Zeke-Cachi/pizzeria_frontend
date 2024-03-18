@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Image } from "../../Interfaces";
+import pizzaPlaceholderIcon from "../../assets/Pizza-placeholder-icon.png";
 
 export const PizzaCardContainer = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ export const PizzaCard = styled.div`
 export const PizzaCardImg = styled.div<Image>`
   height: 50%;
   width: 100%;
-  background-image: ${({ $image }) => `url(${$image})`};
+  background-image: ${({ $image }) =>
+    $image ? `url(${$image})` : `url(${pizzaPlaceholderIcon})`};
   background-size: cover;
 `;

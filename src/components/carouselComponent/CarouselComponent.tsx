@@ -10,8 +10,8 @@ const CarouselComponent: React.FC<ICarouselComponent> = ({
   $img1,
   $img2,
   $img3,
-  $carouselHeight,
-  $carouselWidth,
+  $carouselheight,
+  $carouselwidth,
   $paddingtop,
 }) => {
   function SampleNextArrow(props: IOnClick) {
@@ -37,8 +37,8 @@ const CarouselComponent: React.FC<ICarouselComponent> = ({
 
   return (
     <OptionalCarouselStyling
-      carouselheight={$carouselHeight}
-      carouselwidth={$carouselWidth}
+      $carouselheight={$carouselheight}
+      $carouselwidth={$carouselwidth}
     >
       <Slider {...settings}>
         <CarouselImg

@@ -49,14 +49,14 @@ export interface ICarouselComponent {
   $img1: string;
   $img2: string;
   $img3: string;
-  $carouselHeight?: string;
-  $carouselWidth?: string;
+  $carouselheight?: string;
+  $carouselwidth?: string;
   $paddingtop?: string;
 }
 
 export interface IOptionalCarouselStyling {
-  carouselwidth?: string;
-  carouselheight?: string;
+  $carouselwidth?: string;
+  $carouselheight?: string;
 }
 
 export interface ICarouselImg {

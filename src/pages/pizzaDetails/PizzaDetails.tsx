@@ -37,8 +37,8 @@ const PizzaDetails = () => {
             $img1={pizzaImg1!}
             $img2={pizzaImg2!}
             $img3={pizzaImg3!}
-            $carouselHeight="100%"
-            $carouselWidth="50%"
+            $carouselheight="100%"
+            $carouselwidth="50%"
             $paddingtop="100%"
           />
           <PizzaData>
