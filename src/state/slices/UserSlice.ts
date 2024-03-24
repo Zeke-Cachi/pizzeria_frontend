@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IUserData } from "../../Interfaces";
-import genericUserIcon from "../../assets/default-user-icon.svg";
 
 const initialState: IUserData = {
   email: "",
   familyName: "",
   givenName: "",
-  profileImage: genericUserIcon,
+  profileImage: import.meta.env.VITE_DEFAULT_USER_ICON,
   city: "",
   address: "",
   phoneNumber: "",
