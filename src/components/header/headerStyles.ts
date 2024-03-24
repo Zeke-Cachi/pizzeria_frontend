@@ -42,6 +42,7 @@ export const ProfilePic = styled.img`
   height: 3rem;
   width: 3rem;
   cursor: pointer;
+  background: white;
 `;
 
 export const CartNumericDisplay = styled.div<ICartCounterDisplay>`
