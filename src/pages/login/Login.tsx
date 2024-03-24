@@ -16,11 +16,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { ErrorMsg } from "../../styledComponentsUtils/utils";
 import toast, { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../state/store";
+import { storeUserData } from "../../state/slices/UserSlice";
 
 //---------------------------------------------------------------------------------------------------------------
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const loginValidationSchema = yup
     .object({
@@ -47,19 +51,22 @@ const Login = () => {
       email: data.email,
       password: data.password,
     };
-    const response = await axios.post(
-      import.meta.env.VITE_FORM_LOGIN,
-      userLoginData
-    );
-    if (response.status === 200) {
-      console.log("Great login success");
-      reset();
-      toast.success("Successfully Logged in!");
-      setTimeout(() => {
-        navigate("/");
-      }, 750);
-    } else {
-      console.log("Great login failure");
+    try {
+      const response = await axios.post(
+        import.meta.env.VITE_FORM_LOGIN,
+        userLoginData
+      );
+      if (response.status === 200) {
+        dispatch(storeUserData(response.data));
+        console.log("Great login success");
+        reset();
+        toast.success("Successfully Logged in!");
+        setTimeout(() => {
+          navigate("/");
+        }, 750);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -131,7 +138,7 @@ const Login = () => {
             </a>
 
             <p>
-              Not registered? sign up <Link to="/register">here</Link>
+              Not registered? sign up <Link to="/users/register">here</Link>
             </p>
           </div>
         </LoginFormContainer>

@@ -1,11 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IUserData } from "../../Interfaces";
+import genericUserIcon from "../../assets/default-user-icon.svg";
 
 const initialState: IUserData = {
   email: "",
-  lastname: "",
-  name: "",
-  profileImage: "",
+  familyName: "",
+  givenName: "",
+  profileImage: genericUserIcon,
+  city: "",
+  address: "",
+  phoneNumber: "",
 };
 
 const fetchUserData = createSlice({

@@ -72,13 +72,13 @@ const Header = () => {
               ) : null}
             </div>
 
-            {userData.profileImage ? (
+            {userData.email ? (
               <ProfilePic
                 src={userData.profileImage}
                 alt="user profile image"
               />
             ) : (
-              <Link to="/login" style={{ textDecoration: "none" }}>
+              <Link to="/users/login" style={{ textDecoration: "none" }}>
                 <RegisterLoginLink>Sign in</RegisterLoginLink>
               </Link>
             )}

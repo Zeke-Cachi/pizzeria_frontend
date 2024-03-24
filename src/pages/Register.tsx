@@ -17,11 +17,15 @@ import axios from "axios";
 import { ErrorMsg } from "../styledComponentsUtils/utils";
 import { IRegisterData } from "../Interfaces";
 import toast, { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../state/store";
+import { storeUserData } from "../state/slices/UserSlice";
 
 //---------------------------------------------------------------------------------------------------------------
 
 const Register = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const registerValidationSchema = yup
     .object({
@@ -30,8 +34,6 @@ const Register = () => {
       email: yup.string().required("Missing email!").email("Invalid email"),
       password: yup.string().required("Missing password!"),
       phoneNumber: yup.string(),
-      address: yup.string().required("Missing address!"),
-      city: yup.string().required("Missing city name!"),
     })
     .required();
 
@@ -54,15 +56,13 @@ const Register = () => {
       lastname: data.lastname,
       email: data.email,
       password: data.password,
-      phoneNumber: Number(data.phoneNumber),
-      address: data.address,
-      city: data.city,
     };
     const response = await axios.post(
       import.meta.env.VITE_FORM_REGISTER,
       userRegisterData
     );
     if (response.status === 201) {
+      dispatch(storeUserData(response.data));
       console.log("Great register success");
       reset();
       toast.success("Successfully Logged in!");
@@ -138,24 +138,6 @@ const Register = () => {
                 <ErrorMsg>{errors.phoneNumber.message}</ErrorMsg>
               )}
             </LoginInputContainer>
-            <LoginInputContainer>
-              <label style={{ alignSelf: "self-start" }}>Address</label>
-              <LoginInput
-                type="text"
-                placeholder="enter address"
-                {...register("address")}
-              />
-              {errors.address && <ErrorMsg>{errors.address.message}</ErrorMsg>}
-            </LoginInputContainer>
-            <LoginInputContainer>
-              <label style={{ alignSelf: "self-start" }}>City</label>
-              <LoginInput
-                type="text"
-                placeholder="enter your city"
-                {...register("city")}
-              />
-              {errors.city && <ErrorMsg>{errors.city.message}</ErrorMsg>}
-            </LoginInputContainer>
             <Button
               type="submit"
               $buttonwidth="7rem"
@@ -164,7 +146,7 @@ const Register = () => {
               $buttonfontsize="1.3rem"
               $bgcolor="#ffa07a"
             >
-              Sign in
+              Sign up
             </Button>
           </LoginForm>
           <Hr $width="70%" />
@@ -189,7 +171,8 @@ const Register = () => {
               Login with Google
             </Button>
             <p>
-              Already have an account? sign in <Link to="/register">here</Link>
+              Already have an account? sign in{" "}
+              <Link to="/users/login">here</Link>
             </p>
           </div>
         </LoginFormContainer>

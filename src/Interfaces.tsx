@@ -64,8 +64,6 @@ export interface ICarouselImg {
   $paddingtop?: string;
 }
 
-export interface IAbridgedInput {}
-
 export interface ContactFormData {
   name: string;
   email: string;
@@ -96,15 +94,18 @@ export interface IRegisterData {
   email: string;
   password: string;
   phoneNumber?: string;
-  address: string;
-  city: string;
+  address?: string;
+  city?: string;
 }
 
 export interface IUserData {
   email: string;
-  lastname: string;
-  name: string;
+  familyName: string;
+  givenName: string;
   profileImage: string;
+  address?: string;
+  city?: string;
+  phoneNumber?: string;
 }
 
 export interface ICartCounterDisplay {

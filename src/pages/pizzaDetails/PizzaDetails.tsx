@@ -11,6 +11,9 @@ import Footer from "../../components/footer/Footer";
 import CarouselComponent from "../../components/carouselComponent/CarouselComponent";
 import { Button, SecondaryTitle } from "../../styledComponentsUtils/utils";
 import useCartActions from "../../customHooks/useCartActions";
+// import axios from "axios";
+// import { RootState } from "../../state/store";
+// import { useSelector } from "react-redux";
 
 const PizzaDetails = () => {
   const {
@@ -25,8 +28,14 @@ const PizzaDetails = () => {
   } = useParams();
 
   const bakeType = pizzaBakeType?.replace("_", " ");
-
   const { dispatchAddToCart } = useCartActions();
+  // const pizzaData = useSelector((state: RootState) => state.pizzaList)
+  // const userData = useSelector((state: RootState) => state.userData)
+
+  const storeCartData = async (id: string) => {
+    dispatchAddToCart(Number(id));
+    // const response = await axios.post(import.meta.env.VITE_STORE_CART_DATA, )
+  };
 
   return (
     <>
@@ -58,7 +67,7 @@ const PizzaDetails = () => {
               $buttonheight="4rem"
               $buttonwidth="12rem"
               $buttonfontsize="1.2rem"
-              onClick={() => dispatchAddToCart(Number(id))}
+              onClick={() => storeCartData(id!)}
             >
               Add to cart
             </Button>
