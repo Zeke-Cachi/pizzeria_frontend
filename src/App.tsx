@@ -12,31 +12,32 @@ import { useEffect } from "react";
 import { fetchPizzas } from "./state/slices/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "./state/store";
-import { ICart, IUserData } from "./Interfaces";
+import { ICart } from "./Interfaces";
 import { jwtDecode } from "jwt-decode";
 import { storeUserData } from "./state/slices/UserSlice";
+import { useCookies } from "react-cookie";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
-  const userData: IUserData = useSelector((state: RootState) => state.userData);
+  const [cookies] = useCookies(["user"]);
 
   useEffect(() => {
     if (!pizzaList.items.length) dispatch(fetchPizzas());
   }, []);
 
   useEffect(() => {
-    console.log(userData);
-  }, [userData]);
-
-  useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const tokenParam = searchParams.get("token");
+    const userCookieData = cookies["user"];
     if (tokenParam) {
       const decodedJwt = jwtDecode(tokenParam);
       dispatch(storeUserData(decodedJwt));
+    }
+    if (userCookieData && !tokenParam) {
+      dispatch(storeUserData(userCookieData));
     } else {
-      console.log("No params!");
+      console.log("No params or cookies!");
     }
   }, []);
 

@@ -20,12 +20,16 @@ import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../state/store";
 import { storeUserData } from "../state/slices/UserSlice";
+import { jwtDecode } from "jwt-decode";
+import { useCookies } from "react-cookie";
 
 //---------------------------------------------------------------------------------------------------------------
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+
+  const [, setCookie] = useCookies(["user"]);
 
   const registerValidationSchema = yup
     .object({
@@ -62,7 +66,14 @@ const Register = () => {
       userRegisterData
     );
     if (response.status === 201) {
-      dispatch(storeUserData(response.data));
+      const decodedRegisterJwt = jwtDecode(response.data);
+      const userCookie = {
+        ...decodedRegisterJwt,
+        profileImage: import.meta.env.VITE_DEFAULT_USER_ICON,
+      };
+      setCookie("user", userCookie);
+      dispatch(storeUserData(decodedRegisterJwt));
+
       console.log("Great register success");
       reset();
       toast.success("Successfully Logged in!");

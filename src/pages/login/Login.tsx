@@ -19,12 +19,16 @@ import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../state/store";
 import { storeUserData } from "../../state/slices/UserSlice";
+import { jwtDecode } from "jwt-decode";
+import { useCookies } from "react-cookie";
 
 //---------------------------------------------------------------------------------------------------------------
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+
+  const [, setCookie] = useCookies(["user"]);
 
   const loginValidationSchema = yup
     .object({
@@ -57,7 +61,13 @@ const Login = () => {
         userLoginData
       );
       if (response.status === 200) {
-        dispatch(storeUserData(response.data));
+        const decodedUserJwt = jwtDecode(response.data);
+        const userCookie = {
+          ...decodedUserJwt,
+          profileImage: import.meta.env.VITE_DEFAULT_USER_ICON,
+        };
+        setCookie("user", userCookie);
+        dispatch(storeUserData(decodedUserJwt));
         console.log("Great login success");
         reset();
         toast.success("Successfully Logged in!");
