@@ -73,7 +73,6 @@ const Register = () => {
       };
       setCookie("user", userCookie);
       dispatch(storeUserData(decodedRegisterJwt));
-
       console.log("Great register success");
       reset();
       toast.success("Successfully Logged in!");
