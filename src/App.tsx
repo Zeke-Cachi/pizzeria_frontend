@@ -20,7 +20,7 @@ import { useCookies } from "react-cookie";
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
-  const [cookies] = useCookies(["user"]);
+  const [cookies, setCookie] = useCookies(["user"]);
 
   useEffect(() => {
     if (!pizzaList.items.length) dispatch(fetchPizzas());
@@ -32,6 +32,7 @@ function App() {
     const userCookieData = cookies["user"];
     if (tokenParam) {
       const decodedJwt = jwtDecode(tokenParam);
+      setCookie("user", decodedJwt);
       dispatch(storeUserData(decodedJwt));
     }
     if (userCookieData && !tokenParam) {
