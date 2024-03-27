@@ -6,6 +6,10 @@ import {
   RegisterLoginLink,
   ProfilePic,
   CartNumericDisplay,
+  NavUl,
+  Nav,
+  CartAndProfileContainer,
+  HamburguerMenu,
 } from "./headerStyles";
 import { CartIcon } from "../../styledComponentsUtils/utils";
 import { Link } from "react-router-dom";
@@ -13,10 +17,13 @@ import logoImage from "../../assets/giovannis-pizzeria-high-resolution-logo-tran
 import { HashLink } from "react-router-hash-link";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
+import MobileHeader from "./MobileHeader";
+import { useState } from "react";
 
 const Header = () => {
   const userData = useSelector((state: RootState) => state.userData);
   const cart = useSelector((state: RootState) => state.pizzaList);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   return (
     <>
@@ -25,13 +32,12 @@ const Header = () => {
           <Link to="/">
             <LogoImage src={logoImage} alt="logo image" $logoheight="4rem" />
           </Link>
-          <nav>
-            <ul
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
+          <HamburguerMenu
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+          ></HamburguerMenu>
+          <MobileHeader showMobileMenu={showMobileMenu} />
+          <Nav>
+            <NavUl>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <NavLinks>Home</NavLinks>
               </Link>
@@ -52,15 +58,9 @@ const Header = () => {
               >
                 <NavLinks>Contact us</NavLinks>
               </HashLink>
-            </ul>
-          </nav>
-          <div
-            style={{
-              display: "flex",
-              gap: "4rem",
-              alignItems: "center",
-            }}
-          >
+            </NavUl>
+          </Nav>
+          <CartAndProfileContainer>
             <div style={{ position: "relative" }}>
               <Link to="/cart">
                 <CartIcon />
@@ -79,10 +79,12 @@ const Header = () => {
               />
             ) : (
               <Link to="/users/login" style={{ textDecoration: "none" }}>
-                <RegisterLoginLink>Sign in</RegisterLoginLink>
+                <RegisterLoginLink $ismobile={showMobileMenu}>
+                  Sign in
+                </RegisterLoginLink>
               </Link>
             )}
-          </div>
+          </CartAndProfileContainer>
         </HeaderWrapper>
       </HeaderStyle>
     </>
