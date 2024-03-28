@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { ILogoImg, ICartCounterDisplay, IsMobile } from "../../Interfaces";
+import {
+  ILogoImg,
+  ICartCounterDisplay,
+  IsMobile,
+  ICartCounter,
+} from "../../Interfaces";
 import { FaBars } from "react-icons/fa";
 
 export const HeaderStyle = styled.header`
@@ -62,6 +67,7 @@ export const NavLinks = styled.li`
   font-weight: 700;
   margin: 0 2rem;
   cursor: pointer;
+  position: relative;
 
   @media screen and (max-width: 1024px) {
     text-decoration: none;
@@ -127,4 +133,20 @@ export const MobileHeaderContainer = styled.div<IsMobile>`
   pointer-events: ${({ $ismobile }) => ($ismobile ? `auto` : "none")};
   opacity: ${({ $ismobile }) => ($ismobile ? "1" : "0")};
   transition: opacity 200ms ease-in-out;
+`;
+
+export const CartCounter = styled(NavLinks)<ICartCounter>`
+  &::after {
+    content: "${({ $cartnumber }) => $cartnumber}";
+    position: absolute;
+    border-radius: 50%;
+    background: red;
+    height: 1.2rem;
+    width: 1.2rem;
+    top: 50%;
+    right: -1.8rem;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+  }
 `;

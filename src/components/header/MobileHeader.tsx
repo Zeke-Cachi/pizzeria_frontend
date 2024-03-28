@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 import {
+  CartCounter,
   MobileHeaderContainer,
   NavLinks,
   RegisterLoginLink,
 } from "./headerStyles";
 import { HashLink } from "react-router-hash-link";
+import { ICart } from "../../Interfaces";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 const MobileHeader: React.FC<{ showMobileMenu: boolean }> = ({
   showMobileMenu,
 }) => {
+  const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
+
   return (
     <MobileHeaderContainer $ismobile={showMobileMenu}>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -28,8 +34,8 @@ const MobileHeader: React.FC<{ showMobileMenu: boolean }> = ({
           Sign in
         </RegisterLoginLink>
       </Link>
-      <Link to="/cart" style={{ textDecoration: "none" }}>
-        <NavLinks>My Cart</NavLinks>
+      <Link to="/cart" style={{ textDecoration: "none", position: "relative" }}>
+        <CartCounter $cartnumber={pizzaList.cart.length}>My Cart</CartCounter>
       </Link>
     </MobileHeaderContainer>
   );
