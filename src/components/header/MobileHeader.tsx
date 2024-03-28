@@ -9,14 +9,16 @@ import { HashLink } from "react-router-hash-link";
 import { ICart } from "../../Interfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
+import useIsMobile from "../../customHooks/useIsMobile";
 
 const MobileHeader: React.FC<{ showMobileMenu: boolean }> = ({
   showMobileMenu,
 }) => {
   const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
+  const isDesktop = useIsMobile();
 
   return (
-    <MobileHeaderContainer $ismobile={showMobileMenu}>
+    <MobileHeaderContainer $ismobile={showMobileMenu} $isdesktop={isDesktop}>
       <Link to="/" style={{ textDecoration: "none" }}>
         <NavLinks>Home</NavLinks>
       </Link>

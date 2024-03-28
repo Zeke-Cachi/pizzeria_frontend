@@ -15,7 +15,7 @@ import {
 } from "../CartStyles";
 import { Button, SecondaryTitle } from "../../../styledComponentsUtils/utils";
 import { IFetchPizzas } from "../../../Interfaces";
-import useIsMobile from "../../../customHooks/useScreenWidth";
+import useIsMobile from "../../../customHooks/useIsMobile";
 
 const CartCardList: React.FC<{ cart: IFetchPizzas[] }> = ({ cart }) => {
   const { dispatchAddToCart, dispatchRemoveOneFromCart } = useCartActions();

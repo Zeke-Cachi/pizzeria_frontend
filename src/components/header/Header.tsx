@@ -10,6 +10,7 @@ import {
   Nav,
   CartAndProfileContainer,
   HamburguerMenu,
+  ClosingIcon,
 } from "./headerStyles";
 import { CartIcon } from "../../styledComponentsUtils/utils";
 import { Link } from "react-router-dom";
@@ -18,12 +19,17 @@ import { HashLink } from "react-router-hash-link";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 import MobileHeader from "./MobileHeader";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useIsMobile from "../../customHooks/useIsMobile";
 
 const Header = () => {
   const userData = useSelector((state: RootState) => state.userData);
   const cart = useSelector((state: RootState) => state.pizzaList);
+  const isMobile = useIsMobile();
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  useEffect(() => {
+    if (!isMobile) setShowMobileMenu(false);
+  }, [isMobile]);
 
   return (
     <>
@@ -32,9 +38,15 @@ const Header = () => {
           <Link to="/">
             <LogoImage src={logoImage} alt="logo image" $logoheight="4rem" />
           </Link>
-          <HamburguerMenu
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
-          ></HamburguerMenu>
+          {!showMobileMenu ? (
+            <HamburguerMenu
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+            ></HamburguerMenu>
+          ) : (
+            <ClosingIcon
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+            ></ClosingIcon>
+          )}
           <MobileHeader showMobileMenu={showMobileMenu} />
           <Nav>
             <NavUl>

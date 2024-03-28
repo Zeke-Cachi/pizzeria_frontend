@@ -118,6 +118,7 @@ export interface ICartCardImg {
 
 export interface IsMobile {
   $ismobile: boolean;
+  $isdesktop?: boolean;
 }
 
 export interface ICartCounter {

@@ -5,7 +5,7 @@ import {
   IsMobile,
   ICartCounter,
 } from "../../Interfaces";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export const HeaderStyle = styled.header`
   height: 6rem;
@@ -35,6 +35,18 @@ export const LogoImage = styled.img<ILogoImg>`
 `;
 
 export const HamburguerMenu = styled(FaBars)`
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: none;
+
+  @media screen and (max-width: 1024px) {
+    display: inline;
+  }
+`;
+
+export const ClosingIcon = styled(FaTimes)`
   color: white;
   width: 2rem;
   height: 2rem;
@@ -122,7 +134,7 @@ export const CartNumericDisplay = styled.div<ICartCounterDisplay>`
 export const MobileHeaderContainer = styled.div<IsMobile>`
   width: 100%;
   height: 10rem;
-  background: blue;
+  background: #252523;
   position: absolute;
   top: 100%;
   left: 0;
@@ -133,6 +145,7 @@ export const MobileHeaderContainer = styled.div<IsMobile>`
   pointer-events: ${({ $ismobile }) => ($ismobile ? `auto` : "none")};
   opacity: ${({ $ismobile }) => ($ismobile ? "1" : "0")};
   transition: opacity 200ms ease-in-out;
+  visibility: ${({ $isdesktop }) => (!$isdesktop ? "hidden" : "visible")};
 `;
 
 export const CartCounter = styled(NavLinks)<ICartCounter>`
