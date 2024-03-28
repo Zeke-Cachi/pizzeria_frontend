@@ -21,11 +21,13 @@ import { RootState } from "../../state/store";
 import MobileHeader from "./MobileHeader";
 import { useEffect, useState } from "react";
 import useIsMobile from "../../customHooks/useIsMobile";
+import useScrollDirection from "../../customHooks/useScrollMovement";
 
 const Header = () => {
   const userData = useSelector((state: RootState) => state.userData);
   const cart = useSelector((state: RootState) => state.pizzaList);
   const isMobile = useIsMobile();
+  const scrollMovement = useScrollDirection();
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
   useEffect(() => {
     if (!isMobile) setShowMobileMenu(false);
@@ -33,10 +35,15 @@ const Header = () => {
 
   return (
     <>
-      <HeaderStyle>
+      <HeaderStyle $scrollmovement={scrollMovement}>
         <HeaderWrapper>
           <Link to="/">
-            <LogoImage src={logoImage} alt="logo image" $logoheight="4rem" />
+            <LogoImage
+              src={logoImage}
+              alt="logo image"
+              $logoheight="4rem"
+              $scrollmovement={scrollMovement}
+            />
           </Link>
           {!showMobileMenu ? (
             <HamburguerMenu
@@ -47,7 +54,7 @@ const Header = () => {
               onClick={() => setShowMobileMenu(!showMobileMenu)}
             ></ClosingIcon>
           )}
-          <MobileHeader showMobileMenu={showMobileMenu} />
+          <MobileHeader showMobileMenu={showMobileMenu} userData={userData} />
           <Nav>
             <NavUl>
               <Link to="/" style={{ textDecoration: "none" }}>

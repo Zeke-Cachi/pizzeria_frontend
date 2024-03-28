@@ -6,14 +6,15 @@ import {
   RegisterLoginLink,
 } from "./headerStyles";
 import { HashLink } from "react-router-hash-link";
-import { ICart } from "../../Interfaces";
+import { ICart, IUserData } from "../../Interfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 import useIsMobile from "../../customHooks/useIsMobile";
 
-const MobileHeader: React.FC<{ showMobileMenu: boolean }> = ({
-  showMobileMenu,
-}) => {
+const MobileHeader: React.FC<{
+  showMobileMenu: boolean;
+  userData: IUserData;
+}> = ({ showMobileMenu, userData }) => {
   const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
   const isDesktop = useIsMobile();
 
@@ -33,7 +34,7 @@ const MobileHeader: React.FC<{ showMobileMenu: boolean }> = ({
       </HashLink>
       <Link to="/users/login" style={{ textDecoration: "none" }}>
         <RegisterLoginLink $ismobile={showMobileMenu}>
-          Sign in
+          {userData.givenName ? `Hi, ${userData.givenName}` : "Sign in"}
         </RegisterLoginLink>
       </Link>
       <Link to="/cart" style={{ textDecoration: "none", position: "relative" }}>

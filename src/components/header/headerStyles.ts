@@ -4,16 +4,26 @@ import {
   ICartCounterDisplay,
   IsMobile,
   ICartCounter,
+  IHeaderSize,
 } from "../../Interfaces";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-export const HeaderStyle = styled.header`
+export const HeaderStyle = styled.header<IHeaderSize>`
   height: 6rem;
   background-color: black;
   box-shadow: 0 1px 5px 1px gray;
   display: grid;
   place-items: center;
   position: relative;
+  transition: height 200ms ease-in-out;
+
+  @media screen and (max-width: 1024px) {
+    z-index: 50;
+    position: fixed;
+    width: 100%;
+    height: ${({ $scrollmovement }) =>
+      $scrollmovement === "down" ? "4rem" : "6rem"};
+  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -32,6 +42,12 @@ export const HeaderWrapper = styled.div`
 export const LogoImage = styled.img<ILogoImg>`
   height: ${({ $logoheight }) => $logoheight};
   place-self: center;
+  transition: height 200ms ease-in-out;
+
+  @media screen and (max-width: 1024px) {
+    height: ${({ $scrollmovement, $logoheight }) =>
+      $scrollmovement === "down" ? "2rem" : $logoheight};
+  }
 `;
 
 export const HamburguerMenu = styled(FaBars)`
@@ -132,6 +148,7 @@ export const CartNumericDisplay = styled.div<ICartCounterDisplay>`
 `;
 
 export const MobileHeaderContainer = styled.div<IsMobile>`
+  z-index: 50;
   width: 100%;
   height: 10rem;
   background: #252523;

@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <Header />
-      {/* <CarouselComponent
+      <CarouselComponent
         $img1={image1}
         $img2={image2}
         $img3={image3}
@@ -55,7 +55,7 @@ function App() {
       <PizzaOptions pizzaList={pizzaList} />
       <Stores />
       <ContactFormSection />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }

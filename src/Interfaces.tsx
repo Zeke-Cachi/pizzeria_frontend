@@ -72,6 +72,7 @@ export interface ContactFormData {
 
 export interface ILogoImg {
   $logoheight: string;
+  $scrollmovement: string;
 }
 
 export interface IHighlightedPizzas {
@@ -123,4 +124,8 @@ export interface IsMobile {
 
 export interface ICartCounter {
   $cartnumber: number;
+}
+
+export interface IHeaderSize {
+  $scrollmovement: string;
 }
