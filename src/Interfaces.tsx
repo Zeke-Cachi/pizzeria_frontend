@@ -73,7 +73,7 @@ export interface ContactFormData {
 
 export interface ILogoImg {
   $logoheight: string;
-  $scrollmovement: string;
+  $scrollmovement?: string;
 }
 
 export interface IHighlightedPizzas {
