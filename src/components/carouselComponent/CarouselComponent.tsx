@@ -39,6 +39,7 @@ const CarouselComponent: React.FC<ICarouselComponent> = ({
     <OptionalCarouselStyling
       $carouselheight={$carouselheight}
       $carouselwidth={$carouselwidth}
+      $ismaincarousel={true}
     >
       <Slider {...settings}>
         <CarouselImg

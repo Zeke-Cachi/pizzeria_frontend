@@ -5,6 +5,7 @@ export const OptionalCarouselStyling = styled.div<IOptionalCarouselStyling>`
   width: ${({ $carouselwidth }) => ($carouselwidth ? $carouselwidth : "auto")};
   height: ${({ $carouselheight }) =>
     $carouselheight ? $carouselheight : "auto"};
+  margin-top: ${({ $ismaincarousel }) => ($ismaincarousel ? "6rem" : "0")};
 `;
 
 export const CarouselImg = styled.div<ICarouselImg>`

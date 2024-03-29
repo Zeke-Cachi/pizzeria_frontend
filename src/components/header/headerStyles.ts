@@ -20,6 +20,7 @@ export const HeaderStyle = styled.header<IHeaderSize>`
   @media screen and (max-width: 1024px) {
     z-index: 50;
     position: fixed;
+    top: 0;
     width: 100%;
     height: ${({ $scrollmovement }) =>
       $scrollmovement === "down" ? "4rem" : "6rem"};
