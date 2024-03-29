@@ -13,6 +13,11 @@ export const StyledMainOptionsCard = styled.div`
       background-size: 110%;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    height: 14rem;
+    width: 17rem;
+  }
 `;
 
 export const StyledMainOptionsCardTop = styled.div<Image>`
@@ -36,4 +41,8 @@ export const StyledMainOptionsCardBottom = styled.div`
   text-align: center;
   font-size: 2rem;
   padding: 0 0.5rem;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
 `;
