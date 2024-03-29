@@ -45,4 +45,3 @@ const MobileHeader: React.FC<{
 };
 
 export default MobileHeader;
-//HACER UN ICONITO AL LADO DEL CART, AJUSTAR COLORES DE FONDO Y HACER LA CRUZ EN VEZ DEL HAMBURGUER

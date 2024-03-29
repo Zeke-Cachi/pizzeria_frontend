@@ -166,8 +166,10 @@ export const MobileHeaderContainer = styled.div<IsMobile>`
 `;
 
 export const CartCounter = styled(NavLinks)<ICartCounter>`
-  &::after {
-    content: "${({ $cartnumber }) => $cartnumber}";
+  ${({ $cartnumber }) =>
+    $cartnumber !== 0
+      ? `&::after {
+    content: "${$cartnumber}";
     position: absolute;
     border-radius: 50%;
     background: red;
@@ -178,5 +180,8 @@ export const CartCounter = styled(NavLinks)<ICartCounter>`
     transform: translateY(-50%);
     display: grid;
     place-items: center;
-  }
+  }`
+      : `&::after {
+    visibility: hidden;
+  }`}
 `;
