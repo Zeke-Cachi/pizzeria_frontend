@@ -12,6 +12,7 @@ export const StyledMainOptions = styled.section`
     flex-direction: column;
     align-items: center;
     height: auto;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -46,6 +47,6 @@ export const MainOptionsBanner = styled.img`
   border-radius: 15px;
   cursor: pointer;
   @media screen and (max-width: 1024px) {
-    visibility: hidden;
+    display: none;
   }
 `;

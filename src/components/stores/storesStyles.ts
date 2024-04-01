@@ -7,12 +7,23 @@ export const StoresContainer = styled.section`
   background-color: white;
   text-align: center;
   padding: 2rem;
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
+  }
 `;
 
 export const AllStores = styled.div`
   display: flex;
   gap: 5rem;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 `;
 
 export const Store = styled.div`
@@ -22,6 +33,12 @@ export const Store = styled.div`
   overflow: hidden;
   margin-top: 5rem;
   box-shadow: 0px 0px 15px 10px lightgray;
+
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+    height: 15rem;
+    margin: auto;
+  }
 `;
 
 export const StoreImg = styled.div<Image>`

@@ -8,6 +8,7 @@ export const MainPizzaOptionsCardContainer = styled.div`
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
+    margin-top: 1rem;
   }
 `;
 
