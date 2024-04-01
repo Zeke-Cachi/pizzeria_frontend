@@ -5,6 +5,10 @@ export const MainPizzaOptionsCardContainer = styled.div`
   justify-content: space-evenly;
   margin-top: 4rem;
   padding: 0 1rem;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const MainPizzaPresentationCard = styled.div`
@@ -14,6 +18,11 @@ export const MainPizzaPresentationCard = styled.div`
   position: relative;
   border-radius: 15px;
   overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    width: 20rem;
+    margin: 0 auto;
+  }
 `;
 
 export const MainPizzaPresentationCardImg = styled.img`
@@ -23,6 +32,11 @@ export const MainPizzaPresentationCardImg = styled.img`
   right: 0;
   top: 0;
   z-index: 10;
+
+  @media screen and (max-width: 1024px) {
+    width: 20rem;
+    top: 2rem;
+  }
 `;
 
 export const MainPizzaPresentationCardLower = styled.div`
@@ -40,4 +54,8 @@ export const MainPizzaPresentationCardLower = styled.div`
   place-items: center;
   border-radius: 15px;
   box-shadow: 0 1px 5px 1px gray;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.7rem;
+  }
 `;

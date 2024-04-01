@@ -3,8 +3,11 @@ import { SecondaryTitle } from "../../styledComponentsUtils/utils";
 import HightlightedPizzas from "../highlightedPizzas/HightlightedPizzas";
 import AllPizzas from "../allPizzas/AllPizzas";
 import { ICart } from "../../Interfaces";
+import useIsMobile from "../../customHooks/useIsMobile";
 
 const PizzaOptions: React.FC<{ pizzaList: ICart }> = ({ pizzaList }) => {
+  const isMobile = useIsMobile();
+
   //HAD TO HARDCODE THESE SINCE I ONLY FOUND THE APPROPIATE IMAGES FOR THESE THREE PIZZAS :/
   const pepperoniLink =
     pizzaList.items.length > 1
@@ -47,11 +50,19 @@ const PizzaOptions: React.FC<{ pizzaList: ICart }> = ({ pizzaList }) => {
 
   return (
     <StyledPizzaOptions id="all-pizzas">
-      <SecondaryTitle $fontcolor="gray" $size={"3rem"} $top={"0"}>
+      <SecondaryTitle
+        $fontcolor="gray"
+        $size={isMobile ? "2rem" : "3rem"}
+        $top={"0"}
+      >
         Choose your pizza
       </SecondaryTitle>
 
-      <SecondaryTitle $fontcolor="gray" $size={"2rem"} $top={"2rem"}>
+      <SecondaryTitle
+        $fontcolor="gray"
+        $size={isMobile ? "1.5rem" : "2rem"}
+        $top={"2rem"}
+      >
         Picks of the week
       </SecondaryTitle>
 
