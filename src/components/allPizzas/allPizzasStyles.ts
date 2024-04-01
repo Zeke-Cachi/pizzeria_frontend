@@ -9,6 +9,10 @@ export const PizzaCardContainer = styled.div`
   padding: 0 10rem;
   margin: 2rem 0;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const PizzaCard = styled.div`
@@ -18,6 +22,10 @@ export const PizzaCard = styled.div`
   overflow: hidden;
   background-color: #e6e6e6;
   box-shadow: 0px 0px 15px 15px #cfcfcf;
+
+  @media screen and (max-width: 1024px) {
+    height: 13rem;
+  }
 `;
 
 export const PizzaCardImg = styled.div<Image>`

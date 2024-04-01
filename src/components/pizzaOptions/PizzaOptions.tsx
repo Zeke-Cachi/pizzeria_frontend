@@ -72,7 +72,11 @@ const PizzaOptions: React.FC<{ pizzaList: ICart }> = ({ pizzaList }) => {
         buffaloLink={buffaloLink}
       />
 
-      <SecondaryTitle $fontcolor="gray" $size={"2rem"} $top={"5rem"}>
+      <SecondaryTitle
+        $fontcolor="gray"
+        $size={isMobile ? "1.5rem" : "2rem"}
+        $top={"5rem"}
+      >
         Our full selection
       </SecondaryTitle>
       <AllPizzas pizzaList={pizzaList.items} />

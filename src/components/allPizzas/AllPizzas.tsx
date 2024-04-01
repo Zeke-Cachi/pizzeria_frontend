@@ -2,14 +2,21 @@ import { PizzaCard, PizzaCardContainer, PizzaCardImg } from "./allPizzasStyles";
 import { SecondaryTitle, Button } from "../../styledComponentsUtils/utils";
 import { IFetchPizzas } from "../../Interfaces";
 import { Link } from "react-router-dom";
+import useIsMobile from "../../customHooks/useIsMobile";
 
 const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {
+  const isMobile = useIsMobile();
+
   return (
     <PizzaCardContainer>
       {pizzaList.map((pizza: IFetchPizzas) => (
         <PizzaCard key={pizza.pizzaId}>
           <PizzaCardImg $image={pizza.pizzaImg1!}></PizzaCardImg>
-          <SecondaryTitle $fontcolor="black" $size="1.5rem" $top="1rem">
+          <SecondaryTitle
+            $fontcolor="black"
+            $size={isMobile ? "1.2rem" : "1.5rem"}
+            $top="1rem"
+          >
             {pizza.pizzaName}
           </SecondaryTitle>
           <Link
@@ -21,7 +28,10 @@ const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {
               pizza.pizzaImg3!
             )}`}
           >
-            <Button $buttonmargin="1rem 0 0 0" $bgcolor="#ffa07a">
+            <Button
+              $buttonmargin={isMobile ? "0.5rem 0 0 0" : "1rem 0 0 0"}
+              $bgcolor="#ffa07a"
+            >
               ORDER NOW
             </Button>
           </Link>
