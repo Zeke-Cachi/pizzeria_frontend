@@ -11,7 +11,8 @@ export const PizzaCardContainer = styled.div`
   flex-wrap: wrap;
 
   @media screen and (max-width: 1024px) {
-    padding: 0 1rem;
+    padding: 0;
+    gap: 1rem;
   }
 `;
 
@@ -25,6 +26,7 @@ export const PizzaCard = styled.div`
 
   @media screen and (max-width: 1024px) {
     height: 13rem;
+    width: 10rem;
   }
 `;
 

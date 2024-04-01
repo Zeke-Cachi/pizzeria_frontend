@@ -75,7 +75,7 @@ const PizzaOptions: React.FC<{ pizzaList: ICart }> = ({ pizzaList }) => {
       <SecondaryTitle
         $fontcolor="gray"
         $size={isMobile ? "1.5rem" : "2rem"}
-        $top={"5rem"}
+        $top={isMobile ? "2rem" : "5rem"}
       >
         Our full selection
       </SecondaryTitle>
