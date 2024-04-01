@@ -36,4 +36,20 @@
   left: 3rem;
 }
 
-/*----------------- MAIN OPTIONS CARD ----------------*/
+@media screen and (max-width: 1024px) {
+  .left-arrow,
+  .right-arrow {
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .left-arrow {
+    right: 1rem;
+  }
+
+  .right-arrow {
+    left: 1rem;
+  }
+}
