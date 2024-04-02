@@ -4,6 +4,11 @@ export const ContactFormContainer = styled.div`
   width: 30rem;
   height: 100%;
   margin-top: 2rem;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    padding: 0 1rem;
+  }
 `;
 
 export const StyledContactForm = styled.form``;

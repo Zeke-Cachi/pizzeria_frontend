@@ -9,4 +9,8 @@ export const ContactFormSectionContainer = styled.section<Image>`
   display: grid;
   place-items: center;
   margin-top: 2rem;
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
+  }
 `;

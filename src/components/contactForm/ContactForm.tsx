@@ -17,6 +17,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { ContactFormData } from "../../Interfaces";
 import emailjs from "@emailjs/browser";
+import useIsMobile from "../../customHooks/useIsMobile";
 
 const ContactForm = () => {
   const validationSchema = yup
@@ -68,9 +69,15 @@ const ContactForm = () => {
     }
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <ContactFormContainer id="contact">
-      <SecondaryTitle $fontcolor="black" $size="2.5rem" $top="3rem">
+      <SecondaryTitle
+        $fontcolor="black"
+        $size={isMobile ? "1.7rem" : "2.5rem"}
+        $top="3rem"
+      >
         Contact us
       </SecondaryTitle>
       <StyledContactForm onSubmit={handleSubmit(submitFunction)}>
