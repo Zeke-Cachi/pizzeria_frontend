@@ -18,7 +18,7 @@ export const FooterContainer = styled.footer`
     gap: 2rem;
     text-align: center;
     justify-content: center;
-    padding: 1rem 2.5rem 1rem 2.5rem;
+    padding: 0 2.5rem 1rem;
   }
 `;
 

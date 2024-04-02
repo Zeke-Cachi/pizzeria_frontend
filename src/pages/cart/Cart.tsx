@@ -12,11 +12,11 @@ const Cart = () => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <CartCardContainer>
         <CartCardList cart={cart} />
       </CartCardContainer>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

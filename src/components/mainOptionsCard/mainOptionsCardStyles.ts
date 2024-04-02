@@ -44,6 +44,7 @@ export const StyledMainOptionsCardBottom = styled.div`
   padding: 0 0.5rem;
 
   @media screen and (max-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
   }
 `;
