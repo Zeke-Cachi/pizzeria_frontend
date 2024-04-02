@@ -5,6 +5,13 @@ export interface IOnClick {
 export interface IMainOptionsProps {
   $image: string;
   $text: string;
+  $width: string;
+  $gridspan: string;
+}
+
+export interface IStyledMainOptionsCard {
+  $width: string;
+  $gridspan: string;
 }
 
 export interface Image {

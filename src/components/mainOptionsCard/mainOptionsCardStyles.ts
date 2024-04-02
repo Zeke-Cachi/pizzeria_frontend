@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Image } from "../../Interfaces";
+import { IStyledMainOptionsCard, Image } from "../../Interfaces";
 
-export const StyledMainOptionsCard = styled.div`
+export const StyledMainOptionsCard = styled.div<IStyledMainOptionsCard>`
   height: 20rem;
   width: 20rem;
   border-radius: 20px;
@@ -16,7 +16,8 @@ export const StyledMainOptionsCard = styled.div`
 
   @media screen and (max-width: 1024px) {
     height: 14rem;
-    width: 17rem;
+    width: ${({ $width }) => $width};
+    grid-column: ${({ $gridspan }) => $gridspan};
   }
 `;
 

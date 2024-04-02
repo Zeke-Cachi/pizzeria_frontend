@@ -24,9 +24,13 @@ export const MainOptionsContainer = styled.div`
   width: 100%;
 
   @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    padding: 0 0.5rem 0 0;
+    width: 23rem;
   }
 `;
 
