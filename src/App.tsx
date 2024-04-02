@@ -16,11 +16,13 @@ import { ICart } from "./Interfaces";
 import { jwtDecode } from "jwt-decode";
 import { storeUserData } from "./state/slices/UserSlice";
 import { useCookies } from "react-cookie";
+import useIsMobile from "./customHooks/useIsMobile";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
   const [cookies, setCookie] = useCookies(["user"]);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!pizzaList.items.length) dispatch(fetchPizzas());
@@ -50,6 +52,7 @@ function App() {
         $img2={image2}
         $img3={image3}
         $paddingtop="calc(500 / 1920 * 100%)"
+        $ismaincarousel={isMobile ? true : false}
       />
       <MainOptions />
       <PizzaOptions pizzaList={pizzaList} />

@@ -43,6 +43,7 @@ const PizzaDetails = () => {
             $carouselheight="100%"
             $carouselwidth="50%"
             $paddingtop="100%"
+            $ismaincarousel={false}
           />
           <PizzaData>
             <div>

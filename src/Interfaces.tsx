@@ -52,6 +52,7 @@ export interface ICarouselComponent {
   $carouselheight?: string;
   $carouselwidth?: string;
   $paddingtop?: string;
+  $ismaincarousel?: boolean;
 }
 
 export interface IOptionalCarouselStyling {
