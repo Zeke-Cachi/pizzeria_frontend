@@ -57,7 +57,7 @@ function App() {
       <MainOptions />
       <PizzaOptions pizzaList={pizzaList} />
       <Stores />
-      <ContactFormSection />
+      {/* <ContactFormSection /> */}
       <Footer />
     </>
   );

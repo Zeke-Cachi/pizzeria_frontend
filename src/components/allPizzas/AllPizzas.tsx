@@ -17,7 +17,9 @@ const AllPizzas: React.FC<{ pizzaList: IFetchPizzas[] }> = ({ pizzaList }) => {
             $size={isMobile ? "1.2rem" : "1.5rem"}
             $top="1rem"
           >
-            {pizza.pizzaName}
+            {pizza.pizzaName.length > 16
+              ? pizza.pizzaName.slice(0, 12) + "..."
+              : pizza.pizzaName}
           </SecondaryTitle>
           <Link
             to={`/pizza/${pizza.pizzaId}/${pizza.pizzaName}/${

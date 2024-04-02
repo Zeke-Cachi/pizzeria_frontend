@@ -25,7 +25,7 @@ export const PizzaCard = styled.div`
   box-shadow: 0px 0px 15px 15px #cfcfcf;
 
   @media screen and (max-width: 1024px) {
-    height: 13rem;
+    height: 14rem;
     width: 10rem;
   }
 `;
