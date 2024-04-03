@@ -1,12 +1,17 @@
 import styled from "styled-components";
-import { ICartCardImg } from "../../Interfaces";
+import { ICartCardImg, IsMobile } from "../../Interfaces";
 
-export const CartCardContainer = styled.section`
+export const CartCardContainer = styled.section<IsMobile>`
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem 0 4rem;
   background-color: #e6e6e6;
+  margin-top: ${({ $ismobile }) => ($ismobile ? "6rem" : "0")};
+
+  @media screen and (max-width: 1024px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const CartCard = styled.div`
@@ -23,10 +28,11 @@ export const CartCard = styled.div`
 
   @media screen and (max-width: 1024px) {
     width: 90%;
-    height: 25rem;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: auto;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    padding: 0.3rem 0.1rem;
+    padding: 0.7rem;
+    place-items: center;
   }
 `;
 
@@ -34,31 +40,11 @@ export const CartTitleContainer = styled.div`
   padding: 0 0 0 2rem;
 
   @media screen and (max-width: 1024px) {
-    grid-column: span 2;
     margin: 0 auto;
     gap: 0.5rem;
     padding: 0;
+    place-self: center;
   }
-`;
-
-export const CartUnitPriceContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-
-  @media screen and (max-width: 1024px) {
-    grid-column: span 2;
-    flex-direction: row;
-    margin-top: 1rem;
-  }
-`;
-
-export const CartUnitPrice = styled.p`
-  font-style: italic;
-  font-size: 1.5rem;
-  position: relative;
 `;
 
 export const CartCardPrice = styled.p`
@@ -71,7 +57,7 @@ export const CartCardPrice = styled.p`
 
   @media screen and (max-width: 1024px) {
     grid-column: span 2;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -84,7 +70,6 @@ export const CartAmountContainer = styled.div`
   @media screen and (max-width: 1024px) {
     grid-column: span 2;
     flex-direction: column;
-    margin-top: 2rem;
   }
 `;
 
@@ -95,7 +80,9 @@ export const CartAmountButtonContainer = styled.div`
 
   @media screen and (max-width: 1024px) {
     flex-direction: row;
-    gap: 5rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -105,13 +92,13 @@ export const CartCardImg = styled.div<ICartCardImg>`
   background-position: center;
   height: 100%;
   width: 100%;
-  grid-row: span 2;
 
   @media screen and (max-width: 1024px) {
-    grid-column: span 2;
-    margin: 1rem auto 0;
-    max-width: 50%;
+    margin: 0 auto;
+    height: 3rem;
+    width: 60%;
     border-radius: 15px;
+    place-self: end;
   }
 `;
 
@@ -120,7 +107,7 @@ export const CartAmount = styled.p`
   font-weight: 700;
 
   @media screen and (max-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -143,11 +130,13 @@ export const CartCardButton = styled.button`
     background-color: black;
     color: white;
   }
-`;
 
-export const PlusTaxSpan = styled.span`
-  color: lightgray;
-  font-size: 1rem;
+  @media screen and (max-width: 1024px) {
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    -webkit-tap-highlight-color: transparent;
+  }
 `;
 
 export const Total = styled.div`
@@ -158,7 +147,8 @@ export const Total = styled.div`
   gap: 3rem;
 
   @media screen and (max-width: 1024px) {
-    margin: 2rem 2rem;
+    margin: 0.5rem 2rem;
     flex-direction: column;
+    gap: 1rem;
   }
 `;

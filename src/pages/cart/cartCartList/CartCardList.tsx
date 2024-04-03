@@ -8,9 +8,6 @@ import {
   CartCardImg,
   CartCardPrice,
   CartTitleContainer,
-  CartUnitPrice,
-  CartUnitPriceContainer,
-  PlusTaxSpan,
   Total,
 } from "../CartStyles";
 import { Button, SecondaryTitle } from "../../../styledComponentsUtils/utils";
@@ -37,16 +34,19 @@ const CartCardList: React.FC<{ cart: IFetchPizzas[] }> = ({ cart }) => {
             <CartTitleContainer>
               <SecondaryTitle
                 $fontcolor="black"
-                $size={isMobile ? "1.5rem" : "2rem"}
+                $size={isMobile ? "1.2rem" : "2rem"}
                 $top=".5rem"
               >
-                {cartItem.pizzaName}
+                {cartItem.pizzaName.length >= 16
+                  ? cartItem.pizzaName.slice(0, 14) + "..."
+                  : cartItem.pizzaName}
               </SecondaryTitle>
               <p
                 style={{
                   color: "gray",
                   fontWeight: "light",
                   fontStyle: "italic",
+                  fontSize: `${isMobile ? "0.8rem" : "auto"}`,
                 }}
               >
                 {isMobile
@@ -55,30 +55,23 @@ const CartCardList: React.FC<{ cart: IFetchPizzas[] }> = ({ cart }) => {
               </p>
             </CartTitleContainer>
 
-            <CartUnitPriceContainer>
-              <p style={{ fontStyle: "italic" }}>Unit price</p>
-              <CartUnitPrice>
-                ${cartItem.pizzaPrice} <PlusTaxSpan>+ tax</PlusTaxSpan>
-              </CartUnitPrice>
-            </CartUnitPriceContainer>
-
             <CartCardImg $img={cartItem.pizzaImg1!}></CartCardImg>
             <CartAmountContainer>
-              <CartAmount>{cartItem.pizzaQuantity} pizzas</CartAmount>
               <CartAmountButtonContainer>
-                <CartCardButton
-                  onClick={() => {
-                    dispatchAddToCart(cartItem.pizzaId);
-                  }}
-                >
-                  +
-                </CartCardButton>
                 <CartCardButton
                   onClick={() => {
                     dispatchRemoveOneFromCart(cartItem.pizzaId);
                   }}
                 >
                   -
+                </CartCardButton>
+                <CartAmount>{cartItem.pizzaQuantity} pizzas</CartAmount>
+                <CartCardButton
+                  onClick={() => {
+                    dispatchAddToCart(cartItem.pizzaId);
+                  }}
+                >
+                  +
                 </CartCardButton>
               </CartAmountButtonContainer>
             </CartAmountContainer>
@@ -92,7 +85,7 @@ const CartCardList: React.FC<{ cart: IFetchPizzas[] }> = ({ cart }) => {
       <Total>
         <SecondaryTitle
           $fontcolor="gray"
-          $size={isMobile ? "2rem" : "2.8rem"}
+          $size={isMobile ? "1.7rem" : "2.8rem"}
           $top="0"
         >
           Total: $

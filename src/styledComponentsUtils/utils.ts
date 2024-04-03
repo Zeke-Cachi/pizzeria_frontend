@@ -22,6 +22,7 @@ export const Button = styled.button<IStyledButton>`
   transition: background 200ms ease-in-out;
   cursor: pointer;
   margin: ${({ $buttonmargin }) => ($buttonmargin ? $buttonmargin : "0")};
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     color: #ffa07a;

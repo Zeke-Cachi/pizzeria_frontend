@@ -101,3 +101,5 @@ export const PizzaImg = styled.div<Image>`
     background-size: 200%;
   }
 `;
+
+//EN CART, ARREGLAR EL TEMA DE LA ALTURA DEL HEADER
