@@ -5,10 +5,10 @@ import {
   PizzaDetailsDescription,
   PizzaDetailsMainCard,
   PizzaDetailsPrice,
+  PizzaImg,
 } from "./pizzaDetailsStyles";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import CarouselComponent from "../../components/carouselComponent/CarouselComponent";
 import { Button, SecondaryTitle } from "../../styledComponentsUtils/utils";
 import useCartActions from "../../customHooks/useCartActions";
 
@@ -20,8 +20,6 @@ const PizzaDetails = () => {
     pizzaBakeType,
     pizzaPrice,
     pizzaImg1,
-    pizzaImg2,
-    pizzaImg3,
   } = useParams();
 
   const bakeType = pizzaBakeType?.replace("_", " ");
@@ -36,15 +34,7 @@ const PizzaDetails = () => {
       <Header />
       <PizzaDetailsContainer>
         <PizzaDetailsMainCard>
-          <CarouselComponent
-            $img1={pizzaImg1!}
-            $img2={pizzaImg2!}
-            $img3={pizzaImg3!}
-            $carouselheight="100%"
-            $carouselwidth="50%"
-            $paddingtop="100%"
-            $ismaincarousel={false}
-          />
+          <PizzaImg $image={pizzaImg1!}></PizzaImg>
           <PizzaData>
             <div>
               <SecondaryTitle $fontcolor="black" $size="3rem" $top="2rem">
@@ -60,7 +50,7 @@ const PizzaDetails = () => {
               $buttonmargin="2rem auto 0"
               $bgcolor="#ffa07a"
               $buttonheight="4rem"
-              $buttonwidth="12rem"
+              $buttonwidth="10rem"
               $buttonfontsize="1.2rem"
               onClick={() => storeCartData(id!)}
             >
