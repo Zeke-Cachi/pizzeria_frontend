@@ -6,6 +6,12 @@ export const PizzaDetailsContainer = styled.section`
   display: grid;
   place-items: center;
   margin: 2rem 0;
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
+    place-items: initial;
+    margin: 8rem 0 1rem 0;
+  }
 `;
 
 export const PizzaDetailsMainCard = styled.div`
@@ -16,6 +22,13 @@ export const PizzaDetailsMainCard = styled.div`
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   box-shadow: 0 0 20px 5px lightgray;
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+  }
 `;
 
 export const PizzaData = styled.div`
@@ -24,6 +37,11 @@ export const PizzaData = styled.div`
   justify-content: flex-start;
   gap: 3rem;
   padding: 3rem;
+
+  @media screen and (max-width: 1024px) {
+    gap: 1rem;
+    padding: 1rem 3rem;
+  }
 `;
 
 export const PizzaDetailsDescription = styled.p`
@@ -33,6 +51,11 @@ export const PizzaDetailsDescription = styled.p`
   line-height: 2.2rem;
   margin-top: 2rem;
   color: gray;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 `;
 
 export const PizzaDetailsPrice = styled.p`
@@ -49,6 +72,11 @@ export const PizzaDetailsPrice = styled.p`
     position: absolute;
     top: 0.5rem;
     padding: 0 0 0 0.5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2rem;
+    text-align: start;
   }
 `;
 
@@ -67,4 +95,9 @@ export const PizzaImg = styled.div<Image>`
   animation: ${infiniteMovement} 100s linear infinite;
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: 1024px) {
+    height: 10rem;
+    background-size: 200%;
+  }
 `;

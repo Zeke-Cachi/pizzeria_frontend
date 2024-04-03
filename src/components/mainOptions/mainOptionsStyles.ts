@@ -50,6 +50,7 @@ export const MainOptionsBanner = styled.img`
   margin-top: 3rem;
   border-radius: 15px;
   cursor: pointer;
+
   @media screen and (max-width: 1024px) {
     display: none;
   }

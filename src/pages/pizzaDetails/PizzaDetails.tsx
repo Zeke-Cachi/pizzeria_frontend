@@ -11,6 +11,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Button, SecondaryTitle } from "../../styledComponentsUtils/utils";
 import useCartActions from "../../customHooks/useCartActions";
+import useIsMobile from "../../customHooks/useIsMobile";
 
 const PizzaDetails = () => {
   const {
@@ -29,6 +30,8 @@ const PizzaDetails = () => {
     dispatchAddToCart(Number(id));
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <>
       <Header />
@@ -37,7 +40,11 @@ const PizzaDetails = () => {
           <PizzaImg $image={pizzaImg1!}></PizzaImg>
           <PizzaData>
             <div>
-              <SecondaryTitle $fontcolor="black" $size="3rem" $top="2rem">
+              <SecondaryTitle
+                $fontcolor="black"
+                $size={isMobile ? "1.7rem" : "3rem"}
+                $top="2rem"
+              >
                 {pizzaName}
               </SecondaryTitle>
               <p>{bakeType}</p>
