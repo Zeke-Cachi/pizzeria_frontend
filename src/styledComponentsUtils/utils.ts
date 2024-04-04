@@ -66,3 +66,30 @@ export const ErrorMsg = styled.span`
   bottom: -1.2rem;
   left: 0;
 `;
+
+const addedAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2) translateY(-3rem);
+
+
+  }
+`;
+
+export const AddedSign = styled.p`
+  color: green;
+  font-weight: bolder;
+  font-size: 2rem;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  animation: ${addedAnimation} 500ms infinite;
+`;
