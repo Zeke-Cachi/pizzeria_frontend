@@ -10,26 +10,47 @@ import { ICart, IUserData } from "../../Interfaces";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 import useIsMobile from "../../customHooks/useIsMobile";
+import { Dispatch, SetStateAction } from "react";
 
 const MobileHeader: React.FC<{
   showMobileMenu: boolean;
+  setShowMobileMenu: Dispatch<SetStateAction<boolean>>;
   userData: IUserData;
-}> = ({ showMobileMenu, userData }) => {
+}> = ({ showMobileMenu, userData, setShowMobileMenu }) => {
   const pizzaList: ICart = useSelector((state: RootState) => state.pizzaList);
   const isDesktop = useIsMobile();
 
   return (
     <MobileHeaderContainer $ismobile={showMobileMenu} $isdesktop={isDesktop}>
-      <Link to="/" style={{ textDecoration: "none" }}>
+      <Link
+        to="/"
+        style={{ textDecoration: "none" }}
+        onClick={() => setShowMobileMenu(false)}
+      >
         <NavLinks>Home</NavLinks>
       </Link>
-      <HashLink smooth to="/#all-pizzas" style={{ textDecoration: "none" }}>
+      <HashLink
+        smooth
+        to="/#all-pizzas"
+        style={{ textDecoration: "none" }}
+        onClick={() => setShowMobileMenu(false)}
+      >
         <NavLinks>Pizzas</NavLinks>
       </HashLink>
-      <HashLink smooth to="/#stores" style={{ textDecoration: "none" }}>
+      <HashLink
+        smooth
+        to="/#stores"
+        style={{ textDecoration: "none" }}
+        onClick={() => setShowMobileMenu(false)}
+      >
         <NavLinks>Stores</NavLinks>
       </HashLink>
-      <HashLink smooth to="/#contact" style={{ textDecoration: "none" }}>
+      <HashLink
+        smooth
+        to="/#contact"
+        style={{ textDecoration: "none" }}
+        onClick={() => setShowMobileMenu(false)}
+      >
         <NavLinks>Contact us</NavLinks>
       </HashLink>
       <Link to="/users/login" style={{ textDecoration: "none" }}>

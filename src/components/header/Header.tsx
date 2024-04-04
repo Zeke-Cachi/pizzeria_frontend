@@ -54,7 +54,11 @@ const Header = () => {
               onClick={() => setShowMobileMenu(!showMobileMenu)}
             ></ClosingIcon>
           )}
-          <MobileHeader showMobileMenu={showMobileMenu} userData={userData} />
+          <MobileHeader
+            showMobileMenu={showMobileMenu}
+            setShowMobileMenu={setShowMobileMenu}
+            userData={userData}
+          />
           <Nav>
             <NavUl>
               <Link to="/" style={{ textDecoration: "none" }}>
